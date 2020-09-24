@@ -130,6 +130,8 @@ class SourceProxy(Source.Source):
             except Exception as detail:
                 self.logger.error(
                     'Error getting datablock for %s %s', self.source_channel, detail)
+                retry_cnt += 1
+                time.sleep(self.retry_to)
 
         if not data_block:
             raise RuntimeError('Could not get data.')
