@@ -104,9 +104,10 @@ class SourceProxy(Source.Source):
         """
         Overrides Source class method
         """
-        retry_cnt = 0
         data_block = None
-        while retry_cnt < self.retries:
+        for retry_cnt in range(self.retries):
+            retry_to = self.retry_to
+
             try:
                 tm = self.dataspace.get_taskmanager(self.source_channel)
                 self.logger.debug('task manager %s', tm)
@@ -121,17 +122,13 @@ class SourceProxy(Source.Source):
                         self.logger.debug("DATABLOCK %s", data_block)
                         # This is a valid datablock
                         break
-                    retry_cnt += 1
                     # retry in 1/3 of configured TO
-                    time.sleep(self.retry_to // 3)
-                else:
-                    retry_cnt += 1
-                    time.sleep(self.retry_to)
+                    retry_to = retry_to // 3
             except Exception as detail:
                 self.logger.error(
                     'Error getting datablock for %s %s', self.source_channel, detail)
-                retry_cnt += 1
-                time.sleep(self.retry_to)
+
+            time.sleep(retry_to)
 
         if not data_block:
             raise RuntimeError('Could not get data.')
