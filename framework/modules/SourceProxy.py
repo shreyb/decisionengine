@@ -105,7 +105,7 @@ class SourceProxy(Source.Source):
         Overrides Source class method
         """
         data_block = None
-        for retry_cnt in range(self.retries):
+        for _ in range(self.retries):
             retry_to = self.retry_to
 
             try:
@@ -135,7 +135,7 @@ class SourceProxy(Source.Source):
 
         rc = {}
         filled_keys = []
-        for retry_cnt in range(self.retries):
+        for _ in range(self.retries):
             if len(filled_keys) != len(self.data_keys):
                 for k in self.data_keys:
                     if isinstance(k, tuple) or isinstance(k, list):
