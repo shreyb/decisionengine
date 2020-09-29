@@ -106,8 +106,6 @@ class SourceProxy(Source.Source):
         """
         data_block = None
         for _ in range(self.retries):
-            retry_to = self.retry_to
-
             try:
                 tm = self.dataspace.get_taskmanager(self.source_channel)
                 self.logger.debug('task manager %s', tm)
@@ -122,13 +120,11 @@ class SourceProxy(Source.Source):
                         self.logger.debug("DATABLOCK %s", data_block)
                         # This is a valid datablock
                         break
-                    # retry in 1/3 of configured TO
-                    retry_to = retry_to // 3
             except Exception as detail:
                 self.logger.error(
                     'Error getting datablock for %s %s', self.source_channel, detail)
 
-            time.sleep(retry_to)
+            time.sleep(self.retry_to)
 
         if not data_block:
             raise RuntimeError('Could not get data.')
