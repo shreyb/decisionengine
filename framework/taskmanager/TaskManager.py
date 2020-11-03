@@ -185,6 +185,8 @@ class TaskManager:
                                           self.id, self.get_state_name())
                 break
             time.sleep(1)
+        for publisher in self.channel.publishers:
+            publisher.shutdown()
         for thread in source_threads:
             thread.join()
 
