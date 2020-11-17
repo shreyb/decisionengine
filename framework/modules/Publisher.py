@@ -13,4 +13,3 @@ class Publisher(Module.Module):
 
     def shutdown(self):
         print("Called Publisher.shudown")
-
