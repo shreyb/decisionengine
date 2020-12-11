@@ -471,7 +471,7 @@ class TaskManager:
         """
         if not data_block:
             return
-        for action_list in actions.values():
+        for key, action_list in actions.items():
             for action in action_list:
                 publisher = self.channel.publishers[action]
                 name = publisher.name
