@@ -12,4 +12,4 @@ class Publisher(Module.Module):
         print("Called Publisher.publish")
 
     def shutdown(self):
-        print("Called Publisher.shudown")
+        print("Called Publisher.shutdown")
