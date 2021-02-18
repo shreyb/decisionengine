@@ -10,10 +10,23 @@ Subpackages
    decisionengine.framework.config
    decisionengine.framework.dataspace
    decisionengine.framework.engine
+   decisionengine.framework.logicengine
    decisionengine.framework.modules
    decisionengine.framework.taskmanager
    decisionengine.framework.tests
    decisionengine.framework.util
+
+Submodules
+----------
+
+decisionengine.framework.about module
+-------------------------------------
+
+.. automodule:: decisionengine.framework.about
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
 
 Module contents
 ---------------
