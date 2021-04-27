@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>decisionengine.framework.logicengine package &mdash; decisionengine 1.2.0.post176+geb771f4 documentation</title>
+  <title>decisionengine.framework.logicengine package &mdash; decisionengine 1.2.0.post230+gbe51193 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="decisionengine.framework.modules package" href="decisionengine.framework.modules.html" />
-    <link rel="prev" title="decisionengine.framework.engine package" href="decisionengine.framework.engine.html" /> 
+    <link rel="next" title="decisionengine.framework.logicengine.tests package" href="decisionengine.framework.logicengine.tests.html" />
+    <link rel="prev" title="decisionengine.framework.engine.tests package" href="decisionengine.framework.engine.tests.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,6 +85,8 @@
             
             
               <ul>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.6.html">Release 1.6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.6.html#release-1-6-0">Release 1.6.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.5.html">Release 1.5.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.4.html">Release 1.4.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.4.html#release-1-4-0">Release 1.4.0</a></li>
@@ -108,6 +110,7 @@
 <li class="toctree-l4"><a class="reference internal" href="decisionengine.framework.html#module-decisionengine.framework">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="decisionengine.tests.html">decisionengine.tests package</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="decisionengine.html#module-decisionengine">Module contents</a></li>
@@ -188,6 +191,26 @@
             
   <div class="section" id="decisionengine-framework-logicengine-package">
 <h1>decisionengine.framework.logicengine package<a class="headerlink" href="#decisionengine-framework-logicengine-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="decisionengine.framework.logicengine.tests.html">decisionengine.framework.logicengine.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.logicengine.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.logicengine.tests.html#module-decisionengine.framework.logicengine.tests.test_cascaded_rules">decisionengine.framework.logicengine.tests.test_cascaded_rules module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.logicengine.tests.html#module-decisionengine.framework.logicengine.tests.test_construction">decisionengine.framework.logicengine.tests.test_construction module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.logicengine.tests.html#module-decisionengine.framework.logicengine.tests.test_duplicate_fact_names">decisionengine.framework.logicengine.tests.test_duplicate_fact_names module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.logicengine.tests.html#module-decisionengine.framework.logicengine.tests.test_facts">decisionengine.framework.logicengine.tests.test_facts module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.logicengine.tests.html#module-decisionengine.framework.logicengine.tests.test_fail_on_error">decisionengine.framework.logicengine.tests.test_fail_on_error module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.logicengine.tests.html#module-decisionengine.framework.logicengine.tests.test_pandas_fact">decisionengine.framework.logicengine.tests.test_pandas_fact module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.logicengine.tests.html#module-decisionengine.framework.logicengine.tests.test_rule_with_negated_fact">decisionengine.framework.logicengine.tests.test_rule_with_negated_fact module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.logicengine.tests.html#module-decisionengine.framework.logicengine.tests.test_simple_configuration">decisionengine.framework.logicengine.tests.test_simple_configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.logicengine.tests.html#module-decisionengine.framework.logicengine.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
@@ -213,13 +236,13 @@ of the given data ‘d’.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="decisionengine.framework.logicengine.BooleanExpression.fail_on_error">
-<code class="sig-prename descclassname"><span class="pre">decisionengine.framework.logicengine.BooleanExpression.</span></code><code class="sig-name descname"><span class="pre">fail_on_error</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/logicengine/BooleanExpression.html#fail_on_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.logicengine.BooleanExpression.fail_on_error" title="Permalink to this definition">¶</a></dt>
+<dt id="decisionengine.framework.logicengine.BooleanExpression.function_name_from_call">
+<code class="sig-prename descclassname"><span class="pre">decisionengine.framework.logicengine.BooleanExpression.</span></code><code class="sig-name descname"><span class="pre">function_name_from_call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callnode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/logicengine/BooleanExpression.html#function_name_from_call"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.logicengine.BooleanExpression.function_name_from_call" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="decisionengine.framework.logicengine.BooleanExpression.function_name_from_call">
-<code class="sig-prename descclassname"><span class="pre">decisionengine.framework.logicengine.BooleanExpression.</span></code><code class="sig-name descname"><span class="pre">function_name_from_call</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callnode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/logicengine/BooleanExpression.html#function_name_from_call"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.logicengine.BooleanExpression.function_name_from_call" title="Permalink to this definition">¶</a></dt>
+<dt id="decisionengine.framework.logicengine.BooleanExpression.maybe_fail_on_error">
+<code class="sig-prename descclassname"><span class="pre">decisionengine.framework.logicengine.BooleanExpression.</span></code><code class="sig-name descname"><span class="pre">maybe_fail_on_error</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/logicengine/BooleanExpression.html#maybe_fail_on_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.logicengine.BooleanExpression.maybe_fail_on_error" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -443,8 +466,8 @@ rules according to a specified fact-lookup policy.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="decisionengine.framework.modules.html" class="btn btn-neutral float-right" title="decisionengine.framework.modules package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="decisionengine.framework.engine.html" class="btn btn-neutral float-left" title="decisionengine.framework.engine package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="decisionengine.framework.logicengine.tests.html" class="btn btn-neutral float-right" title="decisionengine.framework.logicengine.tests package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="decisionengine.framework.engine.tests.html" class="btn btn-neutral float-left" title="decisionengine.framework.engine.tests package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

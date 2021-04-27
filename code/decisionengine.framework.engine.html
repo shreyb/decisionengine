@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>decisionengine.framework.engine package &mdash; decisionengine 1.2.0.post176+geb771f4 documentation</title>
+  <title>decisionengine.framework.engine package &mdash; decisionengine 1.2.0.post230+gbe51193 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="decisionengine.framework.logicengine package" href="decisionengine.framework.logicengine.html" />
-    <link rel="prev" title="decisionengine.framework.dataspace.datasources package" href="decisionengine.framework.dataspace.datasources.html" /> 
+    <link rel="next" title="decisionengine.framework.engine.tests package" href="decisionengine.framework.engine.tests.html" />
+    <link rel="prev" title="decisionengine.framework.dataspace.tests package" href="decisionengine.framework.dataspace.tests.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,6 +85,8 @@
             
             
               <ul>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.6.html">Release 1.6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.6.html#release-1-6-0">Release 1.6.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.5.html">Release 1.5.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.4.html">Release 1.4.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.4.html#release-1-4-0">Release 1.4.0</a></li>
@@ -108,6 +110,7 @@
 <li class="toctree-l4"><a class="reference internal" href="decisionengine.framework.html#module-decisionengine.framework">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="decisionengine.tests.html">decisionengine.tests package</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="decisionengine.html#module-decisionengine">Module contents</a></li>
@@ -188,6 +191,21 @@
             
   <div class="section" id="decisionengine-framework-engine-package">
 <h1>decisionengine.framework.engine package<a class="headerlink" href="#decisionengine-framework-engine-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="decisionengine.framework.engine.tests.html">decisionengine.framework.engine.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.engine.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.engine.tests.html#module-decisionengine.framework.engine.tests.fixtures">decisionengine.framework.engine.tests.fixtures module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.engine.tests.html#module-decisionengine.framework.engine.tests.test_client_only">decisionengine.framework.engine.tests.test_client_only module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.engine.tests.html#module-decisionengine.framework.engine.tests.test_startup">decisionengine.framework.engine.tests.test_startup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decisionengine.framework.engine.tests.html#module-decisionengine.framework.engine.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
@@ -549,6 +567,13 @@ manager (i.e. workers.access()) will likely result in a deadlock.</p>
 <div class="section" id="module-decisionengine.framework.engine.de_client">
 <span id="decisionengine-framework-engine-de-client-module"></span><h2>decisionengine.framework.engine.de_client module<a class="headerlink" href="#module-decisionengine.framework.engine.de_client" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
+<dt id="decisionengine.framework.engine.de_client.console_scripts_main">
+<code class="sig-prename descclassname"><span class="pre">decisionengine.framework.engine.de_client.</span></code><code class="sig-name descname"><span class="pre">console_scripts_main</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args_to_parse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/engine/de_client.html#console_scripts_main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.engine.de_client.console_scripts_main" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the entry point for the setuptools auto generated scripts.
+Setuptools thinks a return from this function is an error message.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="decisionengine.framework.engine.de_client.create_parser">
 <code class="sig-prename descclassname"><span class="pre">decisionengine.framework.engine.de_client.</span></code><code class="sig-name descname"><span class="pre">create_parser</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/engine/de_client.html#create_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.engine.de_client.create_parser" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -577,8 +602,8 @@ manager (i.e. workers.access()) will likely result in a deadlock.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="decisionengine.framework.logicengine.html" class="btn btn-neutral float-right" title="decisionengine.framework.logicengine package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="decisionengine.framework.dataspace.datasources.html" class="btn btn-neutral float-left" title="decisionengine.framework.dataspace.datasources package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="decisionengine.framework.engine.tests.html" class="btn btn-neutral float-right" title="decisionengine.framework.engine.tests package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="decisionengine.framework.dataspace.tests.html" class="btn btn-neutral float-left" title="decisionengine.framework.dataspace.tests package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

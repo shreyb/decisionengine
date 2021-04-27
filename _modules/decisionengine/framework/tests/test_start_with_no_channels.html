@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>decisionengine.framework.tests.test_start_with_no_channels &mdash; decisionengine 1.6.0rc documentation</title>
+  <title>decisionengine.framework.tests.test_start_with_no_channels &mdash; decisionengine 1.2.0.post230+gbe51193 documentation</title>
   
 
   
@@ -83,6 +83,8 @@
             
             
               <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.6.html">Release 1.6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.6.html#release-1-6-0">Release 1.6.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.5.html">Release 1.5.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.4.html">Release 1.4.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.4.html#release-1-4-0">Release 1.4.0</a></li>
@@ -91,8 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.1.html">Release 1.1.0</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../unittest.html">Decisionengine framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../unittest.html#decisionengine-modules">Decisionengine_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../jenkins.html">Decisionengine CI with Jenkins pipeline</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../code/index.html">Welcome to decisionengine’s documentation!</a></li>
@@ -222,11 +223,21 @@
 
     <span class="c1"># Take channel offline</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">deserver</span><span class="o">.</span><span class="n">rpc_stop_channel</span><span class="p">(</span><span class="s1">&#39;test_channel&#39;</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">output</span> <span class="o">==</span> <span class="s1">&#39;OK&#39;</span>
+    <span class="k">assert</span> <span class="n">output</span> <span class="o">==</span> <span class="s1">&#39;Channel test_channel stopped cleanly.&#39;</span>
 
     <span class="c1"># Verify no channels are active</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">deserver</span><span class="o">.</span><span class="n">rpc_status</span><span class="p">()</span>
     <span class="k">assert</span> <span class="s2">&quot;No channels are currently active&quot;</span> <span class="ow">in</span> <span class="n">output</span>
+
+    <span class="c1"># Bring channel back online</span>
+    <span class="n">deserver</span><span class="o">.</span><span class="n">rpc_start_channel</span><span class="p">(</span><span class="s1">&#39;test_channel&#39;</span><span class="p">)</span>
+    <span class="n">deserver</span><span class="o">.</span><span class="n">block_while</span><span class="p">(</span><span class="n">State</span><span class="o">.</span><span class="n">BOOT</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">deserver</span><span class="o">.</span><span class="n">rpc_status</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;test_channel.*state = STEADY&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+
+    <span class="c1"># Kill channel</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">deserver</span><span class="o">.</span><span class="n">rpc_kill_channel</span><span class="p">(</span><span class="s1">&#39;test_channel&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">output</span> <span class="o">==</span> <span class="s1">&#39;Channel test_channel has been killed.&#39;</span>
 
     <span class="c1"># Verify that the relevant configuration file still exists.</span>
     <span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">new_config_path</span><span class="p">)</span></div>

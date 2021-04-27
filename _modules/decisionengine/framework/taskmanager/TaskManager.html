@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>decisionengine.framework.taskmanager.TaskManager &mdash; decisionengine 1.2.0.post176+geb771f4 documentation</title>
+  <title>decisionengine.framework.taskmanager.TaskManager &mdash; decisionengine 1.2.0.post230+gbe51193 documentation</title>
   
 
   
@@ -83,6 +83,8 @@
             
             
               <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.6.html">Release 1.6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.6.html#release-1-6-0">Release 1.6.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.5.html">Release 1.5.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.4.html">Release 1.4.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.4.html#release-1-4-0">Release 1.4.0</a></li>
@@ -294,7 +296,7 @@
 
             <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">events_done</span><span class="p">:</span>
                 <span class="n">e</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Unexpected error!&quot;</span><span class="p">)</span>
             <span class="k">raise</span></div>
 
@@ -314,7 +316,7 @@
             <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">events_done</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
                     <span class="n">e</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Unexpected error!&quot;</span><span class="p">)</span>
             <span class="k">raise</span></div>
 
@@ -336,34 +338,36 @@
                 <span class="sa">f</span><span class="s1">&#39;Error occured during initial run of sources. Task Manager </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> exits&#39;</span><span class="p">)</span>
             <span class="k">return</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">decision_cycle</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">State</span><span class="o">.</span><span class="n">STEADY</span><span class="p">)</span>
-
         <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">should_stop</span><span class="p">():</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_any</span><span class="p">(</span><span class="n">done_events</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">decision_cycle</span><span class="p">()</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">should_stop</span><span class="p">():</span>
-                    <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Task Manager </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s1"> received stop signal and exits&#39;</span><span class="p">)</span>
-                    <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">sources</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-                        <span class="n">source</span><span class="o">.</span><span class="n">stop_running</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
-                        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-                    <span class="k">for</span> <span class="n">transform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-                        <span class="n">transform</span><span class="o">.</span><span class="n">stop_running</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
-                        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-                    <span class="k">break</span>
-            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">should_stop</span><span class="p">():</span>
+                    <span class="c1"># the last decision_cycle completed without error</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">State</span><span class="o">.</span><span class="n">STEADY</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_any</span><span class="p">(</span><span class="n">done_events</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
                 <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Exception in the task manager main loop&quot;</span><span class="p">)</span>
                 <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;Error occured. Task Manager </span><span class="si">%s</span><span class="s1"> exits with state </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
                                           <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_state_name</span><span class="p">())</span>
                 <span class="k">break</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># we did not use &#39;break&#39; to exit the loop</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Task Manager </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s1"> received stop signal and exits&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">sources</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">source</span><span class="o">.</span><span class="n">stop_running</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">transform</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">transform</span><span class="o">.</span><span class="n">stop_running</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+            <span class="c1"># the run_transform function is performing our .join()</span>
+            <span class="c1"># for these threads.</span>
+
         <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">source_threads</span><span class="p">:</span>
             <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="TaskManager.get_state_value"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager.TaskManager.get_state_value">[docs]</a>    <span class="k">def</span> <span class="nf">get_state_value</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">get_lock</span><span class="p">():</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">value</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">()</span><span class="o">.</span><span class="n">value</span></div>
 
 <div class="viewcode-block" id="TaskManager.get_state"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager.TaskManager.get_state">[docs]</a>    <span class="k">def</span> <span class="nf">get_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">()</span></div>
@@ -381,6 +385,16 @@
 <div class="viewcode-block" id="TaskManager.get_loglevel"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager.TaskManager.get_loglevel">[docs]</a>    <span class="k">def</span> <span class="nf">get_loglevel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">loglevel</span><span class="o">.</span><span class="n">get_lock</span><span class="p">():</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">loglevel</span><span class="o">.</span><span class="n">value</span></div>
+
+<div class="viewcode-block" id="TaskManager.set_to_shutdown"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager.TaskManager.set_to_shutdown">[docs]</a>    <span class="k">def</span> <span class="nf">set_to_shutdown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">State</span><span class="o">.</span><span class="n">SHUTTINGDOWN</span><span class="p">)</span>
+        <span class="c1"># The following logging statement is not properly logged.  This will</span>
+        <span class="c1"># be worked on in a future issue</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Shutting down.  Will call shutdown on all &#39;</span>
+                                  <span class="s1">&#39;publishers&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">publisher_worker</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">publishers</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">publisher_worker</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">State</span><span class="o">.</span><span class="n">SHUTDOWN</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="TaskManager.take_offline"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager.TaskManager.take_offline">[docs]</a>    <span class="k">def</span> <span class="nf">take_offline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current_data_block</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -434,7 +448,7 @@
         <span class="n">data_block_t1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_backup</span><span class="p">()</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">run_transforms</span><span class="p">(</span><span class="n">data_block_t1</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;error in decision cycle(transforms) &quot;</span><span class="p">)</span>
             <span class="c1"># We do not call &#39;take_offline&#39; here because it has</span>
             <span class="c1"># already been called in the run_transform code on</span>
@@ -444,7 +458,7 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="n">actions_facts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_logic_engine</span><span class="p">(</span><span class="n">data_block_t1</span><span class="p">)</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;ran all logic engines&#39;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;error in decision cycle(logic engine) &quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">take_offline</span><span class="p">(</span><span class="n">data_block_t1</span><span class="p">)</span>
 
@@ -452,7 +466,7 @@
             <span class="k">try</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">run_publishers</span><span class="p">(</span>
                     <span class="n">a_f</span><span class="p">[</span><span class="s1">&#39;actions&#39;</span><span class="p">],</span> <span class="n">a_f</span><span class="p">[</span><span class="s1">&#39;newfacts&#39;</span><span class="p">],</span> <span class="n">data_block_t1</span><span class="p">)</span>
-            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
                 <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;error in decision cycle(publishers) &quot;</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">take_offline</span><span class="p">(</span><span class="n">data_block_t1</span><span class="p">)</span></div>
 
@@ -579,7 +593,7 @@
                                               <span class="n">creator</span><span class="o">=</span><span class="n">transform</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">data_block_put</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">data_block</span><span class="p">)</span>
                     <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;transform put data&#39;</span><span class="p">)</span>
-                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
                     <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;exception from transform </span><span class="si">{</span><span class="n">transform</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> &#39;</span><span class="p">)</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">take_offline</span><span class="p">(</span><span class="n">data_block</span><span class="p">)</span>
                 <span class="k">break</span>
@@ -634,7 +648,7 @@
             <span class="n">header</span> <span class="o">=</span> <span class="n">datablock</span><span class="o">.</span><span class="n">Header</span><span class="p">(</span><span class="n">data_block</span><span class="o">.</span><span class="n">taskmanager_id</span><span class="p">,</span>
                                       <span class="n">create_time</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">creator</span><span class="o">=</span><span class="s1">&#39;logicengine&#39;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">data_block_put</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">data_block</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Unexpected error!&quot;</span><span class="p">)</span>
             <span class="k">raise</span>
         <span class="k">else</span><span class="p">:</span>
@@ -651,14 +665,22 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">data_block</span><span class="p">:</span>
             <span class="k">return</span>
         <span class="k">try</span><span class="p">:</span>
+            <span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
             <span class="k">for</span> <span class="n">action_list</span> <span class="ow">in</span> <span class="n">actions</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
                 <span class="k">for</span> <span class="n">action</span> <span class="ow">in</span> <span class="n">action_list</span><span class="p">:</span>
                     <span class="n">publisher</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">publishers</span><span class="p">[</span><span class="n">action</span><span class="p">]</span>
                     <span class="n">name</span> <span class="o">=</span> <span class="n">publisher</span><span class="o">.</span><span class="n">name</span>
-                    <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;run publisher </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-                    <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;run publisher </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">data_block</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-                    <span class="n">publisher</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">data_block</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;run publisher </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;run publisher </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">data_block</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">publisher</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">data_block</span><span class="p">)</span>
+                    <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">should_stop</span><span class="p">():</span>
+                            <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TaskManager stopping, ignore exception </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> publish() call: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                            <span class="k">continue</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="k">raise</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Unexpected error!&quot;</span><span class="p">)</span>
             <span class="k">raise</span></div></div>
 </pre></div>

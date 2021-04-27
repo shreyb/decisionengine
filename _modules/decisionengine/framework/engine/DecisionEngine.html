@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>decisionengine.framework.engine.DecisionEngine &mdash; decisionengine 1.2.0.post176+geb771f4 documentation</title>
+  <title>decisionengine.framework.engine.DecisionEngine &mdash; decisionengine 1.2.0.post230+gbe51193 documentation</title>
   
 
   
@@ -83,6 +83,8 @@
             
             
               <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.6.html">Release 1.6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.6.html#release-1-6-0">Release 1.6.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.5.html">Release 1.5.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.4.html">Release 1.4.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.4.html#release-1-4-0">Release 1.4.0</a></li>
@@ -186,6 +188,7 @@
 <span class="kn">import</span> <span class="nn">xmlrpc.server</span>
 
 <span class="kn">from</span> <span class="nn">decisionengine.framework.config</span> <span class="kn">import</span> <span class="n">ChannelConfigHandler</span><span class="p">,</span> <span class="n">ValidConfig</span><span class="p">,</span> <span class="n">policies</span>
+<span class="kn">from</span> <span class="nn">decisionengine.framework.dataspace.maintain</span> <span class="kn">import</span> <span class="n">Reaper</span>
 <span class="kn">from</span> <span class="nn">decisionengine.framework.engine.Workers</span> <span class="kn">import</span> <span class="n">Worker</span><span class="p">,</span> <span class="n">Workers</span>
 <span class="kn">import</span> <span class="nn">decisionengine.framework.dataspace.datablock</span> <span class="k">as</span> <span class="nn">datablock</span>
 <span class="kn">import</span> <span class="nn">decisionengine.framework.dataspace.dataspace</span> <span class="k">as</span> <span class="nn">dataspace</span>
@@ -223,7 +226,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">channel_config_loader</span> <span class="o">=</span> <span class="n">channel_config_loader</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">global_config</span> <span class="o">=</span> <span class="n">global_config</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dataspace</span> <span class="o">=</span> <span class="n">dataspace</span><span class="o">.</span><span class="n">DataSpace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">global_config</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span> <span class="o">=</span> <span class="n">dataspace</span><span class="o">.</span><span class="n">Reaper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">global_config</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span> <span class="o">=</span> <span class="n">Reaper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">global_config</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;DecisionEngine started on </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">server_address</span><span class="p">))</span>
 
 <div class="viewcode-block" id="DecisionEngine.get_logger"><a class="viewcode-back" href="../../../../code/decisionengine.framework.engine.html#decisionengine.framework.engine.DecisionEngine.DecisionEngine.get_logger">[docs]</a>    <span class="k">def</span> <span class="nf">get_logger</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -356,7 +359,7 @@
                             <span class="n">txt</span> <span class="o">+=</span> <span class="n">dataframe_formatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">column_names</span><span class="p">])</span>
                         <span class="k">else</span><span class="p">:</span>
                             <span class="n">txt</span> <span class="o">+=</span> <span class="n">dataframe_formatter</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
                     <span class="n">txt</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
             <span class="n">txt</span> <span class="o">+=</span> <span class="s2">&quot;Not produced by any module</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -402,7 +405,7 @@
                                 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">())</span>
                                 <span class="n">txt</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tabulate</span><span class="o">.</span><span class="n">tabulate</span><span class="p">(</span><span class="n">df</span><span class="p">,</span>
                                                                        <span class="n">headers</span><span class="o">=</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s1">&#39;psql&#39;</span><span class="p">))</span>
-                            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
                                 <span class="n">txt</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\t\t\t</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">txt</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
 
@@ -526,6 +529,9 @@
 
 <div class="viewcode-block" id="DecisionEngine.stop_worker"><a class="viewcode-back" href="../../../../code/decisionengine.framework.engine.html#decisionengine.framework.engine.DecisionEngine.DecisionEngine.stop_worker">[docs]</a>    <span class="k">def</span> <span class="nf">stop_worker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">worker</span><span class="p">,</span> <span class="n">timeout</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">worker</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Trying to shutdown worker&quot;</span><span class="p">)</span>
+            <span class="n">worker</span><span class="o">.</span><span class="n">task_manager</span><span class="o">.</span><span class="n">set_to_shutdown</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Trying to take worker offline&quot;</span><span class="p">)</span>
             <span class="n">worker</span><span class="o">.</span><span class="n">task_manager</span><span class="o">.</span><span class="n">take_offline</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
             <span class="n">worker</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">worker</span><span class="o">.</span><span class="n">exitcode</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -601,14 +607,14 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="DecisionEngine.rpc_reaper_status"><a class="viewcode-back" href="../../../../code/decisionengine.framework.engine.html#decisionengine.framework.engine.DecisionEngine.DecisionEngine.rpc_reaper_status">[docs]</a>    <span class="k">def</span> <span class="nf">rpc_reaper_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">interval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">get_retention_interval</span><span class="p">()</span>
-        <span class="n">state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">get_state</span><span class="p">()</span>
+        <span class="n">interval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">retention_interval</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
         <span class="n">txt</span> <span class="o">=</span> <span class="s1">&#39;reaper:</span><span class="se">\n\t</span><span class="s1">state: </span><span class="si">{}</span><span class="se">\n\t</span><span class="s1">retention_interval: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">interval</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">txt</span></div>
 
 <div class="viewcode-block" id="DecisionEngine.reaper_status"><a class="viewcode-back" href="../../../../code/decisionengine.framework.engine.html#decisionengine.framework.engine.DecisionEngine.DecisionEngine.reaper_status">[docs]</a>    <span class="k">def</span> <span class="nf">reaper_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">interval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">get_retention_interval</span><span class="p">()</span>
-        <span class="n">state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">get_state</span><span class="p">()</span>
+        <span class="n">interval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">retention_interval</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
         <span class="n">txt</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">reaper:</span><span class="se">\n\t</span><span class="s1">state: </span><span class="si">{}</span><span class="se">\n\t</span><span class="s1">retention_interval: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">interval</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">txt</span></div></div>
 
@@ -634,7 +640,7 @@
     <span class="n">global_config</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">global_config</span> <span class="o">=</span> <span class="n">ValidConfig</span><span class="o">.</span><span class="n">ValidConfig</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">msg</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">msg</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to load configuration </span><span class="si">{</span><span class="n">config_file</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="n">global_config</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
@@ -645,7 +651,7 @@
 
 <div class="viewcode-block" id="_get_de_conf_manager"><a class="viewcode-back" href="../../../../code/decisionengine.framework.engine.html#decisionengine.framework.engine.DecisionEngine._get_de_conf_manager">[docs]</a><span class="k">def</span> <span class="nf">_get_de_conf_manager</span><span class="p">(</span><span class="n">global_config_dir</span><span class="p">,</span> <span class="n">channel_config_dir</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
     <span class="n">config_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">global_config_dir</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">config_file</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">config_file</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Config file &#39;</span><span class="si">{</span><span class="n">config_file</span><span class="si">}</span><span class="s2">&#39; not found&quot;</span><span class="p">)</span>
 
     <span class="n">global_config</span> <span class="o">=</span> <span class="n">_get_global_config</span><span class="p">(</span><span class="n">config_file</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
@@ -662,10 +668,23 @@
 
 <div class="viewcode-block" id="_start_de_server"><a class="viewcode-back" href="../../../../code/decisionengine.framework.engine.html#decisionengine.framework.engine.DecisionEngine._start_de_server">[docs]</a><span class="k">def</span> <span class="nf">_start_de_server</span><span class="p">(</span><span class="n">global_config</span><span class="p">,</span> <span class="n">channel_config_loader</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Create and start the DE server with the passed global configuration and config manager&#39;&#39;&#39;</span>
-    <span class="n">server</span> <span class="o">=</span> <span class="n">_create_de_server</span><span class="p">(</span><span class="n">global_config</span><span class="p">,</span> <span class="n">channel_config_loader</span><span class="p">)</span>
-    <span class="n">server</span><span class="o">.</span><span class="n">reaper_start</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="n">global_config</span><span class="p">[</span><span class="s1">&#39;dataspace&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;reaper_start_delay_seconds&#39;</span><span class="p">,</span> <span class="mi">1818</span><span class="p">))</span>
-    <span class="n">server</span><span class="o">.</span><span class="n">start_channels</span><span class="p">()</span>
-    <span class="n">server</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span></div>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">server</span> <span class="o">=</span> <span class="n">_create_de_server</span><span class="p">(</span><span class="n">global_config</span><span class="p">,</span> <span class="n">channel_config_loader</span><span class="p">)</span>
+        <span class="n">server</span><span class="o">.</span><span class="n">reaper_start</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="n">global_config</span><span class="p">[</span><span class="s1">&#39;dataspace&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;reaper_start_delay_seconds&#39;</span><span class="p">,</span> <span class="mi">1818</span><span class="p">))</span>
+        <span class="n">server</span><span class="o">.</span><span class="n">start_channels</span><span class="p">()</span>
+        <span class="n">server</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Server Address: </span><span class="si">{</span><span class="n">global_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;server_address&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">              Fatal Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">server</span><span class="o">.</span><span class="n">get_logger</span><span class="p">()</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">raise</span> <span class="n">e</span></div>
+
 
 
 <div class="viewcode-block" id="main"><a class="viewcode-back" href="../../../../code/decisionengine.framework.engine.html#decisionengine.framework.engine.DecisionEngine.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -680,10 +699,11 @@
                                                                 <span class="n">options</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">_start_de_server</span><span class="p">(</span><span class="n">global_config</span><span class="p">,</span> <span class="n">channel_config_loader</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Server Address: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;server_address&#39;</span><span class="p">))</span> <span class="o">+</span>
-                 <span class="s2">&quot;Config Dir: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_config_dir</span><span class="p">)</span> <span class="o">+</span>
-                 <span class="s2">&quot;Fatal Error: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span></div>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;Config Dir: </span><span class="si">{</span><span class="n">global_config_dir</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">              Fatal Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>

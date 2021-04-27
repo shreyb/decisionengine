@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>decisionengine.framework.tests.test_reaper &mdash; decisionengine 1.6.0rc documentation</title>
+  <title>decisionengine.framework.tests.test_reaper &mdash; decisionengine 1.2.0.post230+gbe51193 documentation</title>
   
 
   
@@ -83,6 +83,8 @@
             
             
               <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.6.html">Release 1.6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.6.html#release-1-6-0">Release 1.6.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.5.html">Release 1.5.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.4.html">Release 1.4.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.4.html#release-1-4-0">Release 1.4.0</a></li>
@@ -91,8 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.1.html">Release 1.1.0</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../unittest.html">Decisionengine framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../unittest.html#decisionengine-modules">Decisionengine_modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../jenkins.html">Decisionengine CI with Jenkins pipeline</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../code/index.html">Welcome to decisionengine’s documentation!</a></li>
@@ -204,7 +205,7 @@
     <span class="k">assert</span> <span class="s1">&#39;state:&#39;</span> <span class="ow">in</span> <span class="n">output</span>
 
     <span class="c1"># find reaper state value</span>
-    <span class="k">assert</span> <span class="s1">&#39;State.STOPPED&#39;</span> <span class="ow">in</span> <span class="n">output</span></div>
+    <span class="k">assert</span> <span class="s1">&#39;State.SHUTDOWN&#39;</span> <span class="ow">in</span> <span class="n">output</span></div>
 
 <div class="viewcode-block" id="test_client_can_get_de_server_reaper_start_delay"><a class="viewcode-back" href="../../../../code/decisionengine.framework.tests.html#decisionengine.framework.tests.test_reaper.test_client_can_get_de_server_reaper_start_delay">[docs]</a><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">usefixtures</span><span class="p">(</span><span class="s2">&quot;deserver&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_client_can_get_de_server_reaper_start_delay</span><span class="p">(</span><span class="n">deserver</span><span class="p">):</span>
@@ -225,7 +226,7 @@
     <span class="k">assert</span> <span class="s1">&#39;state:&#39;</span> <span class="ow">in</span> <span class="n">output</span>
 
     <span class="c1"># find reaper state value</span>
-    <span class="k">assert</span> <span class="s1">&#39;State.STARTING&#39;</span> <span class="ow">in</span> <span class="n">output</span></div>
+    <span class="k">assert</span> <span class="s1">&#39;State.IDLE&#39;</span> <span class="ow">in</span> <span class="n">output</span></div>
 </pre></div>
 
            </div>

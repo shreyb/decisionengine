@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>decisionengine.framework.util.sockets &mdash; decisionengine 1.2.0.post176+geb771f4 documentation</title>
+  <title>decisionengine.framework.util.sockets &mdash; decisionengine 1.2.0.post230+gbe51193 documentation</title>
   
 
   
@@ -83,6 +83,8 @@
             
             
               <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.6.html">Release 1.6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.6.html#release-1-6-0">Release 1.6.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.5.html">Release 1.5.0</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.4.html">Release 1.4.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.4.html#release-1-4-0">Release 1.4.0</a></li>
@@ -173,10 +175,10 @@
             <span class="n">s</span><span class="o">.</span><span class="n">setsockopt</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">SOL_SOCKET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SO_REUSEADDR</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">getsockname</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
 
-    <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;problem with get_random_port&quot;</span><span class="p">)</span>
         <span class="k">raise</span>
-    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Unexpected error!&quot;</span><span class="p">)</span>
         <span class="k">raise</span></div>
 </pre></div>
