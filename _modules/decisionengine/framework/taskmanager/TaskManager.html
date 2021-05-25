@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>decisionengine.framework.taskmanager.TaskManager &mdash; decisionengine 1.2.0.post256+g0b0e8dc documentation</title>
+  <title>decisionengine.framework.taskmanager.TaskManager &mdash; decisionengine 1.2.0.post257+g83c4c09 documentation</title>
   
 
   
@@ -443,7 +443,7 @@
 <div class="viewcode-block" id="TaskManager.set_to_shutdown"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager.TaskManager.set_to_shutdown">[docs]</a>    <span class="k">def</span> <span class="nf">set_to_shutdown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">State</span><span class="o">.</span><span class="n">SHUTTINGDOWN</span><span class="p">)</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;decision_engine&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Shutting down. Will call &#39;</span>
-            <span class="s1">&#39;shutdown on all publishers&#39;</span><span class="p">)</span>
+                                                   <span class="s1">&#39;shutdown on all publishers&#39;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">publisher_worker</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">publishers</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
             <span class="n">publisher_worker</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">State</span><span class="o">.</span><span class="n">SHUTDOWN</span><span class="p">)</span></div>
