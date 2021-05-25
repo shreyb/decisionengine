@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>decisionengine.framework.dataspace.tests.test_Reaper &mdash; decisionengine 1.2.0.post230+gbe51193 documentation</title>
+  <title>decisionengine.framework.dataspace.tests.test_Reaper &mdash; decisionengine 1.2.0.post256+g0b0e8dc documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
@@ -250,6 +253,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># make sure reaper has a chance to get the lock</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">State</span><span class="o">.</span><span class="n">ACTIVE</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestReaper.test_state_sets_timer_and_uses_it"><a class="viewcode-back" href="../../../../../code/decisionengine.framework.dataspace.tests.html#decisionengine.framework.dataspace.tests.test_Reaper.TestReaper.test_state_sets_timer_and_uses_it">[docs]</a>    <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">timeout</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_state_sets_timer_and_uses_it</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">MIN_SECONDS_BETWEEN_RUNS</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">seconds_between_runs</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">seconds_between_runs</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">wait_while</span><span class="p">(</span><span class="n">State</span><span class="o">.</span><span class="n">IDLE</span><span class="p">)</span>  <span class="c1"># Make sure the reaper started</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">State</span><span class="o">.</span><span class="n">ACTIVE</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">wait_while</span><span class="p">(</span><span class="n">State</span><span class="o">.</span><span class="n">ACTIVE</span><span class="p">)</span>  <span class="c1"># let the reaper finish its scan</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">wait_while</span><span class="p">(</span><span class="n">State</span><span class="o">.</span><span class="n">IDLE</span><span class="p">)</span>  <span class="c1"># Make sure the reaper started a second time</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">wait_while</span><span class="p">(</span><span class="n">State</span><span class="o">.</span><span class="n">ACTIVE</span><span class="p">)</span>  <span class="c1"># let the reaper finish its scan</span></div>
 
 <div class="viewcode-block" id="TestReaper.test_start_delay"><a class="viewcode-back" href="../../../../../code/decisionengine.framework.dataspace.tests.html#decisionengine.framework.dataspace.tests.test_Reaper.TestReaper.test_start_delay">[docs]</a>    <span class="k">def</span> <span class="nf">test_start_delay</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">reaper</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>

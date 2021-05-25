@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>decisionengine.framework.taskmanager.TaskManager &mdash; decisionengine 1.2.0.post230+gbe51193 documentation</title>
+  <title>decisionengine.framework.taskmanager.TaskManager &mdash; decisionengine 1.2.0.post256+g0b0e8dc documentation</title>
   
 
   
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
@@ -179,20 +182,53 @@
 
 <span class="kn">from</span> <span class="nn">decisionengine.framework.dataspace</span> <span class="kn">import</span> <span class="n">dataspace</span>
 <span class="kn">from</span> <span class="nn">decisionengine.framework.dataspace</span> <span class="kn">import</span> <span class="n">datablock</span>
+<span class="kn">from</span> <span class="nn">decisionengine.framework.modules</span> <span class="kn">import</span> <span class="n">Module</span>
+<span class="kn">from</span> <span class="nn">decisionengine.framework.modules.Publisher</span> <span class="kn">import</span> <span class="n">Publisher</span>
+<span class="kn">from</span> <span class="nn">decisionengine.framework.modules.Source</span> <span class="kn">import</span> <span class="n">Source</span>
+<span class="kn">from</span> <span class="nn">decisionengine.framework.modules.Transform</span> <span class="kn">import</span> <span class="n">Transform</span>
+<span class="kn">from</span> <span class="nn">decisionengine.framework.logicengine.LogicEngine</span> <span class="kn">import</span> <span class="n">LogicEngine</span>
 <span class="kn">from</span> <span class="nn">decisionengine.framework.taskmanager.ProcessingState</span> <span class="kn">import</span> <span class="n">State</span>
 <span class="kn">from</span> <span class="nn">decisionengine.framework.taskmanager.ProcessingState</span> <span class="kn">import</span> <span class="n">ProcessingState</span>
+<span class="kn">from</span> <span class="nn">decisionengine.framework.taskmanager.module_graph</span> <span class="kn">import</span> <span class="n">ensure_no_circularities</span>
+<span class="kn">from</span> <span class="nn">decisionengine.framework.util.subclasses</span> <span class="kn">import</span> <span class="n">all_subclasses</span>
 
 <span class="n">_TRANSFORMS_TO</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># 5 minutes</span>
 <span class="n">_DEFAULT_SCHEDULE</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># &quot;&quot;</span>
 
 
-<div class="viewcode-block" id="_create_worker"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager._create_worker">[docs]</a><span class="k">def</span> <span class="nf">_create_worker</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">class_name</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
+<div class="viewcode-block" id="_find_only_one_subclass"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager._find_only_one_subclass">[docs]</a><span class="k">def</span> <span class="nf">_find_only_one_subclass</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">base_class</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Search through module looking for only one subclass of the supplied base_class</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">subclasses</span> <span class="o">=</span> <span class="n">all_subclasses</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">base_class</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">subclasses</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not find a decision-engine &#39;</span><span class="si">{</span><span class="n">base_class</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; in the module:</span><span class="se">\n</span><span class="s2">&quot;</span>
+                           <span class="sa">f</span><span class="s2">&quot;  &#39;</span><span class="si">{</span><span class="n">module</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">subclasses</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Found more than one decision-engine &#39;</span><span class="si">{</span><span class="n">base_class</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39; in the module</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> \
+                    <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">module</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;:</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">subclasses</span><span class="p">:</span>
+            <span class="n">error_msg</span> <span class="o">+=</span> <span class="s1">&#39; - &#39;</span> <span class="o">+</span> <span class="bp">cls</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="n">error_msg</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Specify which subclass you want via the configuration &#39;name: &lt;one of the above&gt;&#39;.&quot;</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">subclasses</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="_create_module_instance"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager._create_module_instance">[docs]</a><span class="k">def</span> <span class="nf">_create_module_instance</span><span class="p">(</span><span class="n">config_dict</span><span class="p">,</span> <span class="n">base_class</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Create instance of dynamically loaded module</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">my_module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
+    <span class="n">my_module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">config_dict</span><span class="p">[</span><span class="s1">&#39;module&#39;</span><span class="p">])</span>
+    <span class="n">class_name</span> <span class="o">=</span> <span class="n">config_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">class_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">base_class</span> <span class="o">==</span> <span class="n">LogicEngine</span><span class="p">:</span>
+            <span class="c1"># Icky kludge until we remove explicit LogicEngine &#39;module&#39; specification</span>
+            <span class="n">class_name</span> <span class="o">=</span> <span class="s2">&quot;LogicEngine&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">class_name</span> <span class="o">=</span> <span class="n">_find_only_one_subclass</span><span class="p">(</span><span class="n">my_module</span><span class="p">,</span> <span class="n">base_class</span><span class="p">)</span>
+
     <span class="n">class_type</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">my_module</span><span class="p">,</span> <span class="n">class_name</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">class_type</span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">class_type</span><span class="p">(</span><span class="n">config_dict</span><span class="p">[</span><span class="s1">&#39;parameters&#39;</span><span class="p">])</span></div>
 
 
 <div class="viewcode-block" id="Worker"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager.Worker">[docs]</a><span class="k">class</span> <span class="nc">Worker</span><span class="p">:</span>
@@ -201,15 +237,12 @@
 <span class="sd">    execution</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf_dict</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf_dict</span><span class="p">,</span> <span class="n">base_class</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        :type conf_dict: :obj:`dict`</span>
 <span class="sd">        :arg conf_dict: configuration dictionary describing the worker</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">worker</span> <span class="o">=</span> <span class="n">_create_worker</span><span class="p">(</span><span class="n">conf_dict</span><span class="p">[</span><span class="s1">&#39;module&#39;</span><span class="p">],</span>
-                                     <span class="n">conf_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
-                                     <span class="n">conf_dict</span><span class="p">[</span><span class="s1">&#39;parameters&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">worker</span> <span class="o">=</span> <span class="n">_create_module_instance</span><span class="p">(</span><span class="n">conf_dict</span><span class="p">,</span> <span class="n">base_class</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">module</span> <span class="o">=</span> <span class="n">conf_dict</span><span class="p">[</span><span class="s1">&#39;module&#39;</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">conf_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;schedule&#39;</span><span class="p">,</span> <span class="n">_DEFAULT_SCHEDULE</span><span class="p">)</span>
@@ -219,9 +252,8 @@
         <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;decision_engine&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Creating worker: module=</span><span class="si">%s</span><span class="s1"> name=</span><span class="si">%s</span><span class="s1"> parameters=</span><span class="si">%s</span><span class="s1"> schedule=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
                                                    <span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">conf_dict</span><span class="p">[</span><span class="s1">&#39;parameters&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="_make_workers_for"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager._make_workers_for">[docs]</a><span class="k">def</span> <span class="nf">_make_workers_for</span><span class="p">(</span><span class="n">configs</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">Worker</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">configs</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span></div>
+<div class="viewcode-block" id="_make_workers_for"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager._make_workers_for">[docs]</a><span class="k">def</span> <span class="nf">_make_workers_for</span><span class="p">(</span><span class="n">configs</span><span class="p">,</span> <span class="n">base_class</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">Worker</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">base_class</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">configs</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span></div>
 
 
 <div class="viewcode-block" id="Channel"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager.Channel">[docs]</a><span class="k">class</span> <span class="nc">Channel</span><span class="p">:</span>
@@ -237,14 +269,18 @@
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;decision_engine&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Creating channel source&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sources</span> <span class="o">=</span> <span class="n">_make_workers_for</span><span class="p">(</span><span class="n">channel_dict</span><span class="p">[</span><span class="s1">&#39;sources&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sources</span> <span class="o">=</span> <span class="n">_make_workers_for</span><span class="p">(</span><span class="n">channel_dict</span><span class="p">[</span><span class="s1">&#39;sources&#39;</span><span class="p">],</span> <span class="n">Source</span><span class="p">)</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;decision_engine&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Creating channel transform&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">transforms</span> <span class="o">=</span> <span class="n">_make_workers_for</span><span class="p">(</span><span class="n">channel_dict</span><span class="p">[</span><span class="s1">&#39;transforms&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transforms</span> <span class="o">=</span> <span class="n">_make_workers_for</span><span class="p">(</span><span class="n">channel_dict</span><span class="p">[</span><span class="s1">&#39;transforms&#39;</span><span class="p">],</span> <span class="n">Transform</span><span class="p">)</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;decision_engine&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Creating channel logicengine&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">le_s</span> <span class="o">=</span> <span class="n">_make_workers_for</span><span class="p">(</span><span class="n">channel_dict</span><span class="p">[</span><span class="s1">&#39;logicengines&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">le_s</span> <span class="o">=</span> <span class="n">_make_workers_for</span><span class="p">(</span><span class="n">channel_dict</span><span class="p">[</span><span class="s1">&#39;logicengines&#39;</span><span class="p">],</span> <span class="n">LogicEngine</span><span class="p">)</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;decision_engine&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Creating channel publisher&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">publishers</span> <span class="o">=</span> <span class="n">_make_workers_for</span><span class="p">(</span><span class="n">channel_dict</span><span class="p">[</span><span class="s1">&#39;publishers&#39;</span><span class="p">])</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">task_manager</span> <span class="o">=</span> <span class="n">channel_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;task_manager&#39;</span><span class="p">,</span> <span class="p">{})</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">publishers</span> <span class="o">=</span> <span class="n">_make_workers_for</span><span class="p">(</span><span class="n">channel_dict</span><span class="p">[</span><span class="s1">&#39;publishers&#39;</span><span class="p">],</span> <span class="n">Publisher</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task_manager</span> <span class="o">=</span> <span class="n">channel_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;task_manager&#39;</span><span class="p">,</span> <span class="p">{})</span>
+
+        <span class="n">ensure_no_circularities</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sources</span><span class="p">,</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">transforms</span><span class="p">,</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">publishers</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="TaskManager"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager.TaskManager">[docs]</a><span class="k">class</span> <span class="nc">TaskManager</span><span class="p">:</span>
@@ -375,6 +411,24 @@
 <div class="viewcode-block" id="TaskManager.get_state_name"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager.TaskManager.get_state_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_state_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_state</span><span class="p">()</span><span class="o">.</span><span class="n">name</span></div>
 
+<div class="viewcode-block" id="TaskManager.get_produces"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager.TaskManager.get_produces">[docs]</a>    <span class="k">def</span> <span class="nf">get_produces</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># FIXME: What happens if a transform and source have the same name?</span>
+        <span class="n">produces</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">mod</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">sources</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">produces</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">_produces</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">mod</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">produces</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">_produces</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">produces</span></div>
+
+<div class="viewcode-block" id="TaskManager.get_consumes"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager.TaskManager.get_consumes">[docs]</a>    <span class="k">def</span> <span class="nf">get_consumes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># FIXME: What happens if a transform and publisher have the same name?</span>
+        <span class="n">consumes</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">mod</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">consumes</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">_consumes</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">mod</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">publishers</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">consumes</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">_consumes</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">consumes</span></div>
+
 <div class="viewcode-block" id="TaskManager.set_loglevel_value"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager.TaskManager.set_loglevel_value">[docs]</a>    <span class="k">def</span> <span class="nf">set_loglevel_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log_level</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Assumes log_level is a string corresponding to the supported logging-module levels.&quot;&quot;&quot;</span>
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">loglevel</span><span class="o">.</span><span class="n">get_lock</span><span class="p">():</span>
@@ -388,10 +442,8 @@
 
 <div class="viewcode-block" id="TaskManager.set_to_shutdown"><a class="viewcode-back" href="../../../../code/decisionengine.framework.taskmanager.html#decisionengine.framework.taskmanager.TaskManager.TaskManager.set_to_shutdown">[docs]</a>    <span class="k">def</span> <span class="nf">set_to_shutdown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">State</span><span class="o">.</span><span class="n">SHUTTINGDOWN</span><span class="p">)</span>
-        <span class="c1"># The following logging statement is not properly logged.  This will</span>
-        <span class="c1"># be worked on in a future issue</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Shutting down.  Will call shutdown on all &#39;</span>
-                                  <span class="s1">&#39;publishers&#39;</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;decision_engine&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Shutting down. Will call &#39;</span>
+            <span class="s1">&#39;shutdown on all publishers&#39;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">publisher_worker</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">publishers</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
             <span class="n">publisher_worker</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">State</span><span class="o">.</span><span class="n">SHUTDOWN</span><span class="p">)</span></div>
@@ -484,6 +536,7 @@
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Src </span><span class="si">{</span><span class="n">src</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> calling acquire&#39;</span><span class="p">)</span>
                 <span class="n">data</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+                <span class="n">Module</span><span class="o">.</span><span class="n">verify_products</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">worker</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
                 <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Src </span><span class="si">{</span><span class="n">src</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> acquire retuned&#39;</span><span class="p">)</span>
                 <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Src </span><span class="si">{</span><span class="n">src</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> filling header&#39;</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
@@ -573,7 +626,7 @@
 <span class="sd">        :arg data_block: data block</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">data_to</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">channel</span><span class="o">.</span><span class="n">task_manager</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data_TO&#39;</span><span class="p">,</span> <span class="n">_TRANSFORMS_TO</span><span class="p">)</span>
-        <span class="n">consume_keys</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">consumes</span><span class="p">()</span>
+        <span class="n">consume_keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">transform</span><span class="o">.</span><span class="n">worker</span><span class="o">.</span><span class="n">_consumes</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 
         <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;transform: </span><span class="si">%s</span><span class="s1"> expected keys: </span><span class="si">%s</span><span class="s1"> provided keys: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
                                  <span class="n">transform</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">consume_keys</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_block</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
