@@ -152,6 +152,8 @@ class TaskManager:
         self.source_acquire_gauge = prometheus_client.Gauge('source_last_acquire', "Last time a source "
                                     'successfully ran its acquire function',
                                     ['channel_name', 'source_name',])
+
+        self.source_acquire_gauge.labels(self.name, 'test__init__').set(42) # TODO
         # self.source_acquire_gauge.labels('test1', 'test2').set_to_current_time()
         # The rest of this function will go away once the source-proxy
         # has been reimplemented.
@@ -206,6 +208,9 @@ class TaskManager:
         """
         logging.getLogger().setLevel(self.loglevel.value)
         logging.getLogger().info(f'Starting Task Manager {self.id}')
+
+        self.source_acquire_gauge.labels(self.name, 'test_run').set(42) # TODO
+
         done_events, source_threads = self.start_sources(self.data_block_t0)
         # This is a boot phase
         # Wait until all sources run at least one time
@@ -379,7 +384,7 @@ class TaskManager:
         :arg src: source Worker
         """
 
-        self.source_acquire_gauge.labels(self.name, src.name)
+        # self.source_acquire_gauge.labels(self.name, src.name)
 
         # If task manager is in offline state, do not keep executing sources.
         while not self.state.should_stop():
@@ -430,6 +435,8 @@ class TaskManager:
         for key, source in self.channel.sources.items():
             logging.getLogger().info(f'starting loop for {key}')
             event_list.append(source.data_updated)
+            self.source_acquire_gauge.labels(self.name, source.name)
+            # self.source_acquire_gauge.labels(self.name, source.name).inc() TODO
             thread = threading.Thread(target=self.run_source,
                                       name=source.name,
                                       args=(source,))
