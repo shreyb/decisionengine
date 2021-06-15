@@ -22,6 +22,9 @@ from decisionengine.framework.taskmanager.ProcessingState import State
 from decisionengine.framework.taskmanager.ProcessingState import ProcessingState
 from decisionengine.framework.taskmanager.module_graph import ensure_no_circularities
 from decisionengine.framework.util.subclasses import all_subclasses
+from decisionengine.framework.util.prometheus import get_registry
+
+import os  # TODO
 
 _TRANSFORMS_TO = 300  # 5 minutes
 _DEFAULT_SCHEDULE = 300  # ""
@@ -33,8 +36,9 @@ def _find_only_one_subclass(module, base_class):
     """
     subclasses = all_subclasses(module, base_class)
     if not subclasses:
-        raise RuntimeError(f"Could not find a decision-engine '{base_class.__name__}' in the module:\n"
-                           f"  '{module.__name__}'")
+        raise RuntimeError(
+            f"Could not find a decision-engine '{base_class.__name__}' in the module:\n"
+            f"  '{module.__name__}'")
     if len(subclasses) > 1:
         error_msg = f"Found more than one decision-engine '{base_class.__name__}' in the module\n" + \
                     f"'{module.__name__}':\n\n"
@@ -67,7 +71,6 @@ class Worker:
     Provides interface to loadable modules an events to sycronise
     execution
     """
-
     def __init__(self, conf_dict, base_class):
         """
         :type conf_dict: :obj:`dict`
@@ -80,8 +83,10 @@ class Worker:
         self.run_counter = 0
         self.data_updated = threading.Event()
         self.stop_running = threading.Event()
-        logging.getLogger("decision_engine").debug('Creating worker: module=%s name=%s parameters=%s schedule=%s',
-                                                   self.module, self.name, conf_dict['parameters'], self.schedule)
+        logging.getLogger("decision_engine").debug(
+            'Creating worker: module=%s name=%s parameters=%s schedule=%s',
+            self.module, self.name, conf_dict['parameters'], self.schedule)
+
 
 def _make_workers_for(configs, base_class):
     return {name: Worker(e, base_class) for name, e in configs.items()}
@@ -92,7 +97,6 @@ class Channel:
     Decision Channel.
     Instantiates workers according to channel configuration
     """
-
     def __init__(self, channel_dict):
         """
         :type channel_dict: :obj:`dict`
@@ -101,24 +105,27 @@ class Channel:
 
         logging.getLogger("decision_engine").debug('Creating channel source')
         self.sources = _make_workers_for(channel_dict['sources'], Source)
-        logging.getLogger("decision_engine").debug('Creating channel transform')
-        self.transforms = _make_workers_for(channel_dict['transforms'], Transform)
-        logging.getLogger("decision_engine").debug('Creating channel logicengine')
-        self.le_s = _make_workers_for(channel_dict['logicengines'], LogicEngine)
-        logging.getLogger("decision_engine").debug('Creating channel publisher')
-        self.publishers = _make_workers_for(channel_dict['publishers'], Publisher)
+        logging.getLogger("decision_engine").debug(
+            'Creating channel transform')
+        self.transforms = _make_workers_for(channel_dict['transforms'],
+                                            Transform)
+        logging.getLogger("decision_engine").debug(
+            'Creating channel logicengine')
+        self.le_s = _make_workers_for(channel_dict['logicengines'],
+                                      LogicEngine)
+        logging.getLogger("decision_engine").debug(
+            'Creating channel publisher')
+        self.publishers = _make_workers_for(channel_dict['publishers'],
+                                            Publisher)
         self.task_manager = channel_dict.get('task_manager', {})
 
-        ensure_no_circularities(self.sources,
-                                self.transforms,
-                                self.publishers)
+        ensure_no_circularities(self.sources, self.transforms, self.publishers)
 
 
 class TaskManager:
     """
     Task Manager
     """
-
     def __init__(self, name, generation_id, channel_dict, global_config):
         """
         :type name: :obj:`str`
@@ -132,10 +139,9 @@ class TaskManager:
          """
         self.id = str(uuid.uuid4()).upper()
         self.dataspace = dataspace.DataSpace(global_config)
-        self.data_block_t0 = datablock.DataBlock(self.dataspace,
-                                                 name,
-                                                 self.id,
-                                                 generation_id)  # my current data block
+        self.data_block_t0 = datablock.DataBlock(
+            self.dataspace, name, self.id,
+            generation_id)  # my current data block
         self.name = name
         self.channel = Channel(channel_dict)
         self.state = ProcessingState()
@@ -145,21 +151,37 @@ class TaskManager:
         # Metrics
         self.channel_state_gauge = prometheus_client.Gauge('channel_state',
                                                            'Channel state',
-                                                           ['name',]).\
-                                                               labels(self.name)
+                                                           ['name', ],
+                                                           multiprocess_mode='liveall',
+                                                           registry=get_registry()).\
+            labels(self.name)
 
         self.channel_state_gauge.set_function(self.get_state_value)
-        self.source_acquire_gauge = prometheus_client.Gauge('source_last_acquire', "Last time a source "
-                                    'successfully ran its acquire function',
-                                    ['channel_name', 'source_name',])
+        # self.channel_state_gauge.set(9)
+        self.source_acquire_gauge = prometheus_client.Gauge(
+            'source_last_acquire', "Last time a source "
+            'successfully ran its acquire function', [
+                'channel_name',
+                'source_name',
+            ],
+            multiprocess_mode='liveall')
 
-        self.source_acquire_gauge.labels(self.name, 'test__init__').set(42) # TODO
+        self.source_acquire_gauge.labels(self.name,
+                                         'test__init__').set(42)  # TODO
+
+        self.pid_gauge = prometheus_client.Gauge(
+            'pid_gague', "source "
+            'successfully ran its acquire function',
+            multiprocess_mode='liveall')
+        self.pid_gauge.set(os.getpid())
+
+        logging.getLogger().info('Debug:  log pid __init__:  {}'.format(
+            os.getpid()))
         # self.source_acquire_gauge.labels('test1', 'test2').set_to_current_time()
         # The rest of this function will go away once the source-proxy
         # has been reimplemented.
         for src_worker in self.channel.sources.values():
             src_worker.worker.post_create(global_config)
-
 
     def wait_for_all(self, events_done):
         """
@@ -208,8 +230,23 @@ class TaskManager:
         """
         logging.getLogger().setLevel(self.loglevel.value)
         logging.getLogger().info(f'Starting Task Manager {self.id}')
+        logging.getLogger().info(
+            'Debug:  make sure I have a gauge:  {}'.format(
+                self.source_acquire_gauge))  # TODO
+        logging.getLogger().info(f'Debug:  log pid run:  {os.getpid()}')
 
-        self.source_acquire_gauge.labels(self.name, 'test_run').set(42) # TODO
+        # self.source_acquire_gauge_2 = prometheus_client.Gauge('source_last_acquire_2', "Last time a source "
+        #                             'successfully ran its acquire function',
+        #                             ['channel_name', 'source_name',])
+        # logging.getLogger().info('Debug:  make sure I have a gauge:  {}'.format(self.source_acquire_gauge_2)) #TODO
+
+        self.source_acquire_gauge.labels(self.name, 'test_run')
+        self.source_acquire_gauge.labels(self.name, 'test_run').set(42)  # TODO
+        # self.source_acquire_gauge_2.labels(self.name, 'test_run').set(42) # TODO
+        # self.source_acquire_gauge_2.labels(self.name, 'test_run').set(42) # TODO
+
+        logging.getLogger().info(
+            f'Debug:  Tried to set metrics:  {os.getpid()}')
 
         done_events, source_threads = self.start_sources(self.data_block_t0)
         # This is a boot phase
@@ -220,7 +257,8 @@ class TaskManager:
             for thread in source_threads:
                 thread.join()
             logging.getLogger().error(
-                f'Error occured during initial run of sources. Task Manager {self.name} exits')
+                f'Error occured during initial run of sources. Task Manager {self.name} exits'
+            )
             return
 
         while not self.state.should_stop():
@@ -232,14 +270,17 @@ class TaskManager:
                     self.channel_state_gauge.set_function(self.get_state_value)
                     self.wait_for_any(done_events)
             except Exception:  # pragma: no cover
-                logging.getLogger().exception("Exception in the task manager main loop")
-                logging.getLogger().error('Error occured. Task Manager %s exits with state %s',
-                                          self.id, self.get_state_name())
+                logging.getLogger().exception(
+                    "Exception in the task manager main loop")
+                logging.getLogger().error(
+                    'Error occured. Task Manager %s exits with state %s',
+                    self.id, self.get_state_name())
                 break
 
         else:
             # we did not use 'break' to exit the loop
-            logging.getLogger().info(f'Task Manager {self.id} received stop signal and exits')
+            logging.getLogger().info(
+                f'Task Manager {self.id} received stop signal and exits')
 
         for source in self.channel.sources.values():
             source.stop_running.set()
@@ -293,8 +334,9 @@ class TaskManager:
     def set_to_shutdown(self):
         self.state.set(State.SHUTTINGDOWN)
         self.channel_state_gauge.set_function(self.get_state_value)
-        logging.getLogger("decision_engine").debug('Shutting down. Will call '
-                                                   'shutdown on all publishers')
+        logging.getLogger("decision_engine").debug(
+            'Shutting down. Will call '
+            'shutdown on all publishers')
         for publisher_worker in self.channel.publishers.values():
             publisher_worker.worker.shutdown()
         self.state.set(State.SHUTDOWN)
@@ -322,13 +364,15 @@ class TaskManager:
         """
 
         if not isinstance(data, dict):
-            logging.getLogger().error(f'data_block put expecting {dict} type, got {type(data)}')
+            logging.getLogger().error(
+                f'data_block put expecting {dict} type, got {type(data)}')
             return
         logging.getLogger().debug(f'data_block_put {data}')
         with data_block.lock:
-            metadata = datablock.Metadata(data_block.taskmanager_id,
-                                          state='END_CYCLE',
-                                          generation_id=data_block.generation_id)
+            metadata = datablock.Metadata(
+                data_block.taskmanager_id,
+                state='END_CYCLE',
+                generation_id=data_block.generation_id)
             for key, product in data.items():
                 data_block.put(key, product, header, metadata=metadata)
 
@@ -354,7 +398,8 @@ class TaskManager:
         try:
             self.run_transforms(data_block_t1)
         except Exception:  # pragma: no cover
-            logging.getLogger().exception("error in decision cycle(transforms) ")
+            logging.getLogger().exception(
+                "error in decision cycle(transforms) ")
             # We do not call 'take_offline' here because it has
             # already been called in the run_transform code on
             # operating on a separate thread.
@@ -364,15 +409,17 @@ class TaskManager:
             actions_facts = self.run_logic_engine(data_block_t1)
             logging.getLogger().info('ran all logic engines')
         except Exception:  # pragma: no cover
-            logging.getLogger().exception("error in decision cycle(logic engine) ")
+            logging.getLogger().exception(
+                "error in decision cycle(logic engine) ")
             self.take_offline(data_block_t1)
 
         for a_f in actions_facts:
             try:
-                self.run_publishers(
-                    a_f['actions'], a_f['newfacts'], data_block_t1)
+                self.run_publishers(a_f['actions'], a_f['newfacts'],
+                                    data_block_t1)
             except Exception:  # pragma: no cover
-                logging.getLogger().exception("error in decision cycle(publishers) ")
+                logging.getLogger().exception(
+                    "error in decision cycle(publishers) ")
                 self.take_offline(data_block_t1)
 
     def run_source(self, src):
@@ -395,26 +442,34 @@ class TaskManager:
                 logging.getLogger().info(f'Src {src.name} acquire retuned')
                 logging.getLogger().info(f'Src {src.name} filling header')
                 self.source_acquire_gauge.labels(self.name, src.name)
-                self.source_acquire_gauge.labels(self.name, src.name).set_to_current_time()
+                self.source_acquire_gauge.labels(
+                    self.name, src.name).set_to_current_time()
                 if data:
                     t = time.time()
-                    header = datablock.Header(self.data_block_t0.taskmanager_id,
-                                              create_time=t, creator=src.module)
+                    header = datablock.Header(
+                        self.data_block_t0.taskmanager_id,
+                        create_time=t,
+                        creator=src.module)
                     logging.getLogger().info(f'Src {src.name} header done')
                     self.data_block_put(data, header, self.data_block_t0)
-                    logging.getLogger().info(f'Src {src.name} data block put done')
+                    logging.getLogger().info(
+                        f'Src {src.name} data block put done')
                 else:
-                    logging.getLogger().warning(f'Src {src.name} acquire retuned no data')
+                    logging.getLogger().warning(
+                        f'Src {src.name} acquire retuned no data')
                 src.run_counter += 1
                 src.data_updated.set()
-                logging.getLogger().info(f'Src {src.name} {src.module} finished cycle')
+                logging.getLogger().info(
+                    f'Src {src.name} {src.module} finished cycle')
             except Exception:
-                logging.getLogger().exception(f'Exception running source {src.name} ')
+                logging.getLogger().exception(
+                    f'Exception running source {src.name} ')
                 self.take_offline(self.data_block_t0)
             if src.schedule > 0:
                 s = src.stop_running.wait(src.schedule)
                 if s:
-                    logging.getLogger().info(f'received stop_running signal for {src.name}')
+                    logging.getLogger().info(
+                        f'received stop_running signal for {src.name}')
                     break
             else:
                 logging.getLogger().info(f'source {src.name} runs only once')
@@ -439,7 +494,7 @@ class TaskManager:
             # self.source_acquire_gauge.labels(self.name, source.name).inc() TODO
             thread = threading.Thread(target=self.run_source,
                                       name=source.name,
-                                      args=(source,))
+                                      args=(source, ))
             source_threads.append(thread)
             # Cannot catch exception from function called in separate thread
             thread.start()
@@ -486,13 +541,14 @@ class TaskManager:
         """
         g = prometheus_client.Gauge('transform_last_run', 'Last time a '
                                     'transform successfully ran',
-                                    ['channel_name', 'transform_name',])\
-                                    .labels(self.name, transform.name)
+                                    ['channel_name', 'transform_name', ])\
+            .labels(self.name, transform.name)
         data_to = self.channel.task_manager.get('data_TO', _TRANSFORMS_TO)
         consume_keys = list(transform.worker._consumes.keys())
 
-        logging.getLogger().info('transform: %s expected keys: %s provided keys: %s',
-                                 transform.name, consume_keys, list(data_block.keys()))
+        logging.getLogger().info(
+            'transform: %s expected keys: %s provided keys: %s',
+            transform.name, consume_keys, list(data_block.keys()))
         loop_counter = 0
         while not self.state.should_stop():
             # Check if data is ready
@@ -511,17 +567,20 @@ class TaskManager:
                     g.set(t)
                     logging.getLogger().info('transform put data')
                 except Exception:  # pragma: no cover
-                    logging.getLogger().exception(f'exception from transform {transform.name} ')
+                    logging.getLogger().exception(
+                        f'exception from transform {transform.name} ')
                     self.take_offline(data_block)
                 break
             s = transform.stop_running.wait(1)
             if s:
-                logging.getLogger().info(f'received stop_running signal for {transform.name}')
+                logging.getLogger().info(
+                    f'received stop_running signal for {transform.name}')
                 break
             loop_counter += 1
             if loop_counter == data_to:
-                logging.getLogger().info(f'transform {transform.name} did not get consumes data'
-                                         f'in {data_to} seconds. Exiting')
+                logging.getLogger().info(
+                    f'transform {transform.name} did not get consumes data'
+                    f'in {data_to} seconds. Exiting')
                 break
         transform.data_updated.set()
 
@@ -541,36 +600,42 @@ class TaskManager:
 
                 g = prometheus_client.Gauge('logicengine_last_run', 'Last time '
                                             'a logicengine successfully ran',
-                                            ['channel_name', 'logicengine_name',])\
-                                            .labels(self.name,
-                                                    self.channel.le_s[le].name)
+                                            ['channel_name', 'logicengine_name', ])\
+                    .labels(self.name,
+                            self.channel.le_s[le].name)
                 logging.getLogger().info('run logic engine %s',
                                          self.channel.le_s[le].name)
                 logging.getLogger().debug('run logic engine %s %s',
-                                          self.channel.le_s[le].name, data_block)
+                                          self.channel.le_s[le].name,
+                                          data_block)
                 rc = self.channel.le_s[le].worker.evaluate(data_block)
                 le_list.append(rc)
                 g.set_to_current_time()
                 logging.getLogger().info('run logic engine %s done',
                                          self.channel.le_s[le].name)
-                logging.getLogger().info('logic engine %s generated newfacts: %s',
-                                         self.channel.le_s[le].name, rc['newfacts'].to_dict(orient='records'))
-                logging.getLogger().info('logic engine %s generated actions: %s',
-                                         self.channel.le_s[le].name, rc['actions'])
+                logging.getLogger().info(
+                    'logic engine %s generated newfacts: %s',
+                    self.channel.le_s[le].name,
+                    rc['newfacts'].to_dict(orient='records'))
+                logging.getLogger().info(
+                    'logic engine %s generated actions: %s',
+                    self.channel.le_s[le].name, rc['actions'])
 
             # Add new facts to the datablock
             # Add empty dataframe if nothing is available
             if le_list:
-                all_facts = pandas.concat([i['newfacts']
-                                           for i in le_list], ignore_index=True)
+                all_facts = pandas.concat([i['newfacts'] for i in le_list],
+                                          ignore_index=True)
             else:
-                logging.getLogger().info('Logic engine(s) did not return any new facts')
+                logging.getLogger().info(
+                    'Logic engine(s) did not return any new facts')
                 all_facts = pandas.DataFrame()
 
             data = {'de_logicengine_facts': all_facts}
             t = time.time()
             header = datablock.Header(data_block.taskmanager_id,
-                                      create_time=t, creator='logicengine')
+                                      create_time=t,
+                                      creator='logicengine')
             self.data_block_put(data, header, data_block)
         except Exception:  # pragma: no cover
             logging.getLogger().exception("Unexpected error!")
@@ -597,8 +662,8 @@ class TaskManager:
 
                     g = prometheus_client.Gauge('publisher_last_run', 'Last time '
                                                 'a publisher successfully ran',
-                                                ['channel_name', 'publisher_name',])\
-                                                .labels(self.name, name)
+                                                ['channel_name', 'publisher_name', ])\
+                        .labels(self.name, name)
                     log.info(f'run publisher {name}')
                     log.debug(f'run publisher {name} {data_block}')
                     try:
@@ -606,7 +671,9 @@ class TaskManager:
                         g.set_to_current_time()
                     except KeyError as e:
                         if self.state.should_stop():
-                            log.warning(f"TaskManager stopping, ignore exception {name} publish() call: {e}")
+                            log.warning(
+                                f"TaskManager stopping, ignore exception {name} publish() call: {e}"
+                            )
                             continue
                         else:
                             raise

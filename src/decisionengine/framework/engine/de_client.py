@@ -41,6 +41,14 @@ def create_parser():
     server.add_argument(
         "--block-while",
         metavar='<state>')
+    server.add_argument(   # TODO
+        "--metrics",
+        action='store_true',
+        help="print metrics")
+    server.add_argument(   # TODO
+        "--list-rpc-methods",
+        action='store_true',
+        help="print all rpc methods")
 
     channels = parser.add_argument_group("Channel-specific options")
     channels.add_argument(
@@ -149,6 +157,10 @@ def execute_command_from_args(argsparsed, de_socket):
         return de_socket.get_log_level()
     if argsparsed.block_while:
         return de_socket.block_while(argsparsed.block_while)
+    if argsparsed.metrics:
+        return de_socket.metrics()
+    if argsparsed.rpc_methods:
+        return de_socket.system.listMethods()
 
     # Channel-specific options
     if argsparsed.stop_channel:
