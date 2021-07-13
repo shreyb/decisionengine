@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>decisionengine.framework.util package &mdash; decisionengine 1.2.0.post257+g83c4c09 documentation</title>
+  <title>decisionengine.framework.util package &mdash; decisionengine 1.2.0.post346+g33f9ade documentation</title>
   
 
   
@@ -88,14 +88,10 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.6.html">Release 1.6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.6.html">Release 1.6.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.6.html#release-1-6-1">Release 1.6.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.6.html#release-1-6-0">Release 1.6.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.5.html">Release 1.5.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.4.html">Release 1.4.1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.4.html#release-1-4-0">Release 1.4.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.3.html">Release 1.3.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.2.html">Release 1.2.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.1.html">Release 1.1.0</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../jenkins.html">Decisionengine CI with Jenkins pipeline</a></li>
@@ -232,6 +228,45 @@ in configuration. Configuration file has to have this bit added:</p>
 <dt class="sig sig-object py" id="decisionengine.framework.util.reaper.main">
 <span class="sig-prename descclassname"><span class="pre">decisionengine.framework.util.reaper.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/util/reaper.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.util.reaper.main" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+</div>
+<div class="section" id="module-decisionengine.framework.util.singleton">
+<span id="decisionengine-framework-util-singleton-module"></span><h2>decisionengine.framework.util.singleton module<a class="headerlink" href="#module-decisionengine.framework.util.singleton" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="decisionengine.framework.util.singleton.ScopedSingleton">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.util.singleton.</span></span><span class="sig-name descname"><span class="pre">ScopedSingleton</span></span><a class="reference internal" href="../_modules/decisionengine/framework/util/singleton.html#ScopedSingleton"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.util.singleton.ScopedSingleton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#decisionengine.framework.util.singleton.Singleton" title="decisionengine.framework.util.singleton.Singleton"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.util.singleton.Singleton</span></code></a></p>
+<p>Singleton pattern using Metaclass with weak refs</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="decisionengine.framework.util.singleton.ScopedSingleton._instances">
+<span class="sig-name descname"><span class="pre">_instances</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;WeakValueDictionary&gt;</span></em><a class="headerlink" href="#decisionengine.framework.util.singleton.ScopedSingleton._instances" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="decisionengine.framework.util.singleton.ScopedSingletonABC">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.util.singleton.</span></span><span class="sig-name descname"><span class="pre">ScopedSingletonABC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/util/singleton.html#ScopedSingletonABC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.util.singleton.ScopedSingletonABC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABCMeta</span></code>, <a class="reference internal" href="#decisionengine.framework.util.singleton.ScopedSingleton" title="decisionengine.framework.util.singleton.ScopedSingleton"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.util.singleton.ScopedSingleton</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="decisionengine.framework.util.singleton.Singleton">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.util.singleton.</span></span><span class="sig-name descname"><span class="pre">Singleton</span></span><a class="reference internal" href="../_modules/decisionengine/framework/util/singleton.html#Singleton"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.util.singleton.Singleton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
+<p>Singleton pattern using Metaclass with strong refs</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="decisionengine.framework.util.singleton.Singleton._instances">
+<span class="sig-name descname"><span class="pre">_instances</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{}</span></em><a class="headerlink" href="#decisionengine.framework.util.singleton.Singleton._instances" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="decisionengine.framework.util.singleton.SingletonABC">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.util.singleton.</span></span><span class="sig-name descname"><span class="pre">SingletonABC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/util/singleton.html#SingletonABC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.util.singleton.SingletonABC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABCMeta</span></code>, <a class="reference internal" href="#decisionengine.framework.util.singleton.Singleton" title="decisionengine.framework.util.singleton.Singleton"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.util.singleton.Singleton</span></code></a></p>
+</dd></dl>
 
 </div>
 <div class="section" id="module-decisionengine.framework.util.sockets">

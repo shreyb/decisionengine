@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>decisionengine.framework.taskmanager package &mdash; decisionengine 1.2.0.post257+g83c4c09 documentation</title>
+  <title>decisionengine.framework.taskmanager package &mdash; decisionengine 1.2.0.post346+g33f9ade documentation</title>
   
 
   
@@ -88,14 +88,10 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.6.html">Release 1.6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.6.html">Release 1.6.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.6.html#release-1-6-1">Release 1.6.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.6.html#release-1-6-0">Release 1.6.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.5.html">Release 1.5.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.4.html">Release 1.4.1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.4.html#release-1-4-0">Release 1.4.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.3.html">Release 1.3.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.2.html">Release 1.2.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.1.html">Release 1.1.0</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../jenkins.html">Decisionengine CI with Jenkins pipeline</a></li>
@@ -218,7 +214,7 @@ The ‘STOPPING_CONDITIONS’ list is a list of states that a thread may have if
 The ‘INACTIVE_CONDITIONS’ list is a list of states that a thread may have when it is not active</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.taskmanager.ProcessingState.ProcessingState">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.taskmanager.ProcessingState.</span></span><span class="sig-name descname"><span class="pre">ProcessingState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">state=&lt;State.BOOT:</span> <span class="pre">0&gt;</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/taskmanager/ProcessingState.html#ProcessingState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.taskmanager.ProcessingState.ProcessingState" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.taskmanager.ProcessingState.</span></span><span class="sig-name descname"><span class="pre">ProcessingState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">State.BOOT</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/taskmanager/ProcessingState.html#ProcessingState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.taskmanager.ProcessingState.ProcessingState" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This object tracks the state of a process.</p>
 <p>A number of convience wrappers are provided.</p>
@@ -562,7 +558,7 @@ execution</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="decisionengine.framework.taskmanager.module_graph.ensure_no_circularities">
 <span class="sig-prename descclassname"><span class="pre">decisionengine.framework.taskmanager.module_graph.</span></span><span class="sig-name descname"><span class="pre">ensure_no_circularities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transforms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">publishers</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/taskmanager/module_graph.html#ensure_no_circularities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.taskmanager.module_graph.ensure_no_circularities" title="Permalink to this definition">¶</a></dt>
-<dd><p>DOCSTRING</p>
+<dd><p>Ensures no circularities among data products.</p>
 </dd></dl>
 
 </div>

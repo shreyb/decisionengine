@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>decisionengine.framework.dataspace.dataspace &mdash; decisionengine 1.2.0.post257+g83c4c09 documentation</title>
+  <title>decisionengine.framework.dataspace.dataspace &mdash; decisionengine 1.2.0.post346+g33f9ade documentation</title>
   
 
   
@@ -86,14 +86,10 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.6.html">Release 1.6.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.6.html">Release 1.6.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.6.html#release-1-6-1">Release 1.6.1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.6.html#release-1-6-0">Release 1.6.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.5.html">Release 1.5.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.4.html">Release 1.4.1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.4.html#release-1-4-0">Release 1.4.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.3.html">Release 1.3.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.2.html">Release 1.2.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../release_notes/release_notes_1.1.html">Release 1.1.0</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../jenkins.html">Decisionengine CI with Jenkins pipeline</a></li>
@@ -169,8 +165,18 @@
             
   <h1>Source code for decisionengine.framework.dataspace.dataspace</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">importlib</span>
-<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">structlog</span>
 
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;DataSpaceConfigurationError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DataSpaceConnectionError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DataSpaceError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DataSpaceExistsError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DataSpace&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="kn">from</span> <span class="nn">decisionengine.framework.util.singleton</span> <span class="kn">import</span> <span class="n">Singleton</span>
+<span class="kn">from</span> <span class="nn">decisionengine.framework.modules.de_logger</span> <span class="kn">import</span> <span class="n">LOGGERNAME</span>
 
 <div class="viewcode-block" id="DataSpaceConfigurationError"><a class="viewcode-back" href="../../../../code/decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.dataspace.DataSpaceConfigurationError">[docs]</a><span class="k">class</span> <span class="nc">DataSpaceConfigurationError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -200,36 +206,18 @@
     <span class="k">pass</span></div>
 
 
-<div class="viewcode-block" id="Singleton"><a class="viewcode-back" href="../../../../code/decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.dataspace.Singleton">[docs]</a><span class="k">class</span> <span class="nc">Singleton</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Singleton pattern using Metaclass</span>
-<span class="sd">    http://stackoverflow.com/questions/6760685/creating-a-singleton-in-python</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">_instances</span> <span class="o">=</span> <span class="p">{}</span>
-
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">cls</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_instances</span><span class="p">:</span>
-            <span class="bp">cls</span><span class="o">.</span><span class="n">_instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span>
-                                                   <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="c1"># Uncomment following to run __init__ everytime class is called</span>
-        <span class="c1"># else:</span>
-        <span class="c1">#     cls._instances[cls].__init__(*args, **kwargs)</span>
-
-        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span></div>
-
-<div class="viewcode-block" id="DataSourceLoader"><a class="viewcode-back" href="../../../../code/decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.dataspace.DataSourceLoader">[docs]</a><span class="k">class</span> <span class="nc">DataSourceLoader</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">Singleton</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">DataSourceLoader</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">Singleton</span><span class="p">):</span>
 
     <span class="n">_ds</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="DataSourceLoader.create_datasource"><a class="viewcode-back" href="../../../../code/decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.dataspace.DataSourceLoader.create_datasource">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">create_datasource</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">class_name</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
         <span class="n">ds</span> <span class="o">=</span> <span class="n">DataSourceLoader</span><span class="o">.</span><span class="n">_ds</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">ds</span><span class="p">:</span>
             <span class="n">py_module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
             <span class="n">clazz</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">py_module</span><span class="p">,</span> <span class="n">class_name</span><span class="p">)</span>
             <span class="n">ds</span> <span class="o">=</span> <span class="n">clazz</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ds</span></div></div>
+        <span class="k">return</span> <span class="n">ds</span>
 
 
 <div class="viewcode-block" id="DataSpace"><a class="viewcode-back" href="../../../../code/decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.dataspace.DataSpace">[docs]</a><span class="k">class</span> <span class="nc">DataSpace</span><span class="p">():</span>
@@ -238,16 +226,14 @@
 <span class="sd">    to the database used to store the actual data</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="c1">#: Description of tables and their columns</span>
-    <span class="n">_tables_created</span> <span class="o">=</span> <span class="kc">False</span>
-
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        :type config: :obj:`dict`</span>
 <span class="sd">        :arg config: Configuration dictionary</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">structlog</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">LOGGERNAME</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">module</span><span class="o">=</span><span class="vm">__name__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Initializing a dataspace&#39;</span><span class="p">)</span>
 
         <span class="c1"># Validate configuration</span>
@@ -266,6 +252,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Error in initializing DataSpace!&quot;</span><span class="p">)</span>
             <span class="k">raise</span> <span class="n">DataSpaceConfigurationError</span><span class="p">(</span><span class="s1">&#39;Invalid dataspace configuration&#39;</span><span class="p">)</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">config</span>
+
+        <span class="c1"># Connect to the datasource/database</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">datasource</span> <span class="o">=</span> <span class="n">DataSourceLoader</span><span class="p">()</span><span class="o">.</span><span class="n">create_datasource</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_db_driver_module</span><span class="p">,</span>
                                                                <span class="bp">self</span><span class="o">.</span><span class="n">_db_driver_name</span><span class="p">,</span>
                                                                <span class="bp">self</span><span class="o">.</span><span class="n">_db_driver_config</span><span class="p">)</span>
@@ -273,22 +262,6 @@
         <span class="c1"># Datablocks, current and previous, keyed by taskmanager_ids</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">curr_datablocks</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prev_datablocks</span> <span class="o">=</span> <span class="p">{}</span>
-
-        <span class="c1"># Connect to the database</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">datasource</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
-        <span class="k">except</span> <span class="n">DataSpaceConnectionError</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;Cannot connect to the datasource!&#39;</span><span class="p">)</span>
-            <span class="k">raise</span>
-
-        <span class="c1"># Create tables if not created</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">DataSpace</span><span class="o">.</span><span class="n">_tables_created</span><span class="p">:</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">datasource</span><span class="o">.</span><span class="n">create_tables</span><span class="p">()</span>
-                <span class="n">DataSpace</span><span class="o">.</span><span class="n">_tables_created</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;Cannot create datebase tables&#39;</span><span class="p">)</span>
-                <span class="k">raise</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
         <span class="k">return</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -344,8 +317,8 @@
 <div class="viewcode-block" id="DataSpace.close"><a class="viewcode-back" href="../../../../code/decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.dataspace.DataSpace.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">datasource</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="DataSpace.store_taskmanager"><a class="viewcode-back" href="../../../../code/decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.dataspace.DataSpace.store_taskmanager">[docs]</a>    <span class="k">def</span> <span class="nf">store_taskmanager</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasource</span><span class="o">.</span><span class="n">store_taskmanager</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span></div>
+<div class="viewcode-block" id="DataSpace.store_taskmanager"><a class="viewcode-back" href="../../../../code/decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.dataspace.DataSpace.store_taskmanager">[docs]</a>    <span class="k">def</span> <span class="nf">store_taskmanager</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">taskmanager_id</span><span class="p">,</span> <span class="n">datestamp</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasource</span><span class="o">.</span><span class="n">store_taskmanager</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">taskmanager_id</span><span class="p">,</span> <span class="n">datestamp</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="DataSpace.get_last_generation_id"><a class="viewcode-back" href="../../../../code/decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.dataspace.DataSpace.get_last_generation_id">[docs]</a>    <span class="k">def</span> <span class="nf">get_last_generation_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                                <span class="n">taskmanager_name</span><span class="p">,</span>
