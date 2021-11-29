@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Overview: module code &mdash; decisionengine 1.2.1.dev413+ga4a7938 documentation</title>
+  <title>Overview: module code &mdash; decisionengine 1.2.1.dev473+g6fa0bf4 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -37,6 +37,9 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.7.html">Latest</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing and running HEPCloud’s Decision Engine</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../jenkins.html">Decisionengine CI with Jenkins pipeline</a></li>
@@ -76,17 +79,16 @@
 <li><a href="decisionengine/framework/config/ValidConfig.html">decisionengine.framework.config.ValidConfig</a></li>
 <li><a href="decisionengine/framework/config/policies.html">decisionengine.framework.config.policies</a></li>
 <li><a href="decisionengine/framework/config/tests/test_config.html">decisionengine.framework.config.tests.test_config</a></li>
+<li><a href="decisionengine/framework/config/tests/test_de_std.html">decisionengine.framework.config.tests.test_de_std</a></li>
 <li><a href="decisionengine/framework/config/tests/test_policies.html">decisionengine.framework.config.tests.test_policies</a></li>
 <li><a href="decisionengine/framework/dataspace/datablock.html">decisionengine.framework.dataspace.datablock</a></li>
 <li><a href="decisionengine/framework/dataspace/datasource.html">decisionengine.framework.dataspace.datasource</a></li>
 <li><a href="decisionengine/framework/dataspace/datasources/null.html">decisionengine.framework.dataspace.datasources.null</a></li>
-<li><a href="decisionengine/framework/dataspace/datasources/postgresql.html">decisionengine.framework.dataspace.datasources.postgresql</a></li>
 <li><a href="decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api</a></li>
 <li><a href="decisionengine/framework/dataspace/datasources/sqlalchemy_ds/db_schema.html">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema</a></li>
 <li><a href="decisionengine/framework/dataspace/datasources/sqlalchemy_ds/utils.html">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils</a></li>
 <li><a href="decisionengine/framework/dataspace/datasources/tests/fixtures.html">decisionengine.framework.dataspace.datasources.tests.fixtures</a></li>
 <li><a href="decisionengine/framework/dataspace/datasources/tests/test_datasource_api.html">decisionengine.framework.dataspace.datasources.tests.test_datasource_api</a></li>
-<li><a href="decisionengine/framework/dataspace/datasources/tests/test_postgresql.html">decisionengine.framework.dataspace.datasources.tests.test_postgresql</a></li>
 <li><a href="decisionengine/framework/dataspace/dataspace.html">decisionengine.framework.dataspace.dataspace</a></li>
 <li><a href="decisionengine/framework/dataspace/maintain.html">decisionengine.framework.dataspace.maintain</a></li>
 <li><a href="decisionengine/framework/dataspace/tests/fixtures.html">decisionengine.framework.dataspace.tests.fixtures</a></li>
@@ -108,6 +110,7 @@
 <li><a href="decisionengine/framework/logicengine/LogicEngine.html">decisionengine.framework.logicengine.LogicEngine</a></li>
 <li><a href="decisionengine/framework/logicengine/Rule.html">decisionengine.framework.logicengine.Rule</a></li>
 <li><a href="decisionengine/framework/logicengine/RuleEngine.html">decisionengine.framework.logicengine.RuleEngine</a></li>
+<li><a href="decisionengine/framework/logicengine/tests/test_bool_function_name.html">decisionengine.framework.logicengine.tests.test_bool_function_name</a></li>
 <li><a href="decisionengine/framework/logicengine/tests/test_cascaded_rules.html">decisionengine.framework.logicengine.tests.test_cascaded_rules</a></li>
 <li><a href="decisionengine/framework/logicengine/tests/test_construction.html">decisionengine.framework.logicengine.tests.test_construction</a></li>
 <li><a href="decisionengine/framework/logicengine/tests/test_duplicate_fact_names.html">decisionengine.framework.logicengine.tests.test_duplicate_fact_names</a></li>
@@ -116,10 +119,8 @@
 <li><a href="decisionengine/framework/logicengine/tests/test_pandas_fact.html">decisionengine.framework.logicengine.tests.test_pandas_fact</a></li>
 <li><a href="decisionengine/framework/logicengine/tests/test_rule_with_negated_fact.html">decisionengine.framework.logicengine.tests.test_rule_with_negated_fact</a></li>
 <li><a href="decisionengine/framework/logicengine/tests/test_simple_configuration.html">decisionengine.framework.logicengine.tests.test_simple_configuration</a></li>
-<li><a href="decisionengine/framework/managers/ChannelManager.html">decisionengine.framework.managers.ChannelManager</a></li>
 <li><a href="decisionengine/framework/managers/ComponentManager.html">decisionengine.framework.managers.ComponentManager</a></li>
-<li><a href="decisionengine/framework/managers/SourceManager.html">decisionengine.framework.managers.SourceManager</a></li>
-<li><a href="decisionengine/framework/managers/SourceSubscriptionManager.html">decisionengine.framework.managers.SourceSubscriptionManager</a></li>
+<li><a href="decisionengine/framework/modules/EmptySource.html">decisionengine.framework.modules.EmptySource</a></li>
 <li><a href="decisionengine/framework/modules/Module.html">decisionengine.framework.modules.Module</a></li>
 <li><a href="decisionengine/framework/modules/Publisher.html">decisionengine.framework.modules.Publisher</a></li>
 <li><a href="decisionengine/framework/modules/Source.html">decisionengine.framework.modules.Source</a></li>
@@ -128,6 +129,7 @@
 <li><a href="decisionengine/framework/modules/de_logger.html">decisionengine.framework.modules.de_logger</a></li>
 <li><a href="decisionengine/framework/modules/describe.html">decisionengine.framework.modules.describe</a></li>
 <li><a href="decisionengine/framework/modules/print_description.html">decisionengine.framework.modules.print_description</a></li>
+<li><a href="decisionengine/framework/modules/tests/test_EmptySource.html">decisionengine.framework.modules.tests.test_EmptySource</a></li>
 <li><a href="decisionengine/framework/modules/tests/test_Module.html">decisionengine.framework.modules.tests.test_Module</a></li>
 <li><a href="decisionengine/framework/modules/tests/test_Publisher.html">decisionengine.framework.modules.tests.test_Publisher</a></li>
 <li><a href="decisionengine/framework/modules/tests/test_Source.html">decisionengine.framework.modules.tests.test_Source</a></li>
@@ -141,10 +143,12 @@
 <li><a href="decisionengine/framework/taskmanager/module_graph.html">decisionengine.framework.taskmanager.module_graph</a></li>
 <li><a href="decisionengine/framework/tests/ABTransform.html">decisionengine.framework.tests.ABTransform</a></li>
 <li><a href="decisionengine/framework/tests/BATransform.html">decisionengine.framework.tests.BATransform</a></li>
+<li><a href="decisionengine/framework/tests/DynamicPublisher.html">decisionengine.framework.tests.DynamicPublisher</a></li>
+<li><a href="decisionengine/framework/tests/DynamicSource.html">decisionengine.framework.tests.DynamicSource</a></li>
+<li><a href="decisionengine/framework/tests/DynamicTransform.html">decisionengine.framework.tests.DynamicTransform</a></li>
 <li><a href="decisionengine/framework/tests/ErrorOnAcquire.html">decisionengine.framework.tests.ErrorOnAcquire</a></li>
 <li><a href="decisionengine/framework/tests/FailingPublisher.html">decisionengine.framework.tests.FailingPublisher</a></li>
 <li><a href="decisionengine/framework/tests/FailingSourceNOP.html">decisionengine.framework.tests.FailingSourceNOP</a></li>
-<li><a href="decisionengine/framework/tests/FailingSourceProxy.html">decisionengine.framework.tests.FailingSourceProxy</a></li>
 <li><a href="decisionengine/framework/tests/ModuleProgramOptions.html">decisionengine.framework.tests.ModuleProgramOptions</a></li>
 <li><a href="decisionengine/framework/tests/PublisherNOP.html">decisionengine.framework.tests.PublisherNOP</a></li>
 <li><a href="decisionengine/framework/tests/PublisherWithMissingConsumes.html">decisionengine.framework.tests.PublisherWithMissingConsumes</a></li>
@@ -153,20 +157,22 @@
 <li><a href="decisionengine/framework/tests/SupportsConfigPublisher.html">decisionengine.framework.tests.SupportsConfigPublisher</a></li>
 <li><a href="decisionengine/framework/tests/TransformNOP.html">decisionengine.framework.tests.TransformNOP</a></li>
 <li><a href="decisionengine/framework/tests/TransformWithMissingProducesConsumes.html">decisionengine.framework.tests.TransformWithMissingProducesConsumes</a></li>
-<li><a href="decisionengine/framework/tests/WorkingSourceProxy.html">decisionengine.framework.tests.WorkingSourceProxy</a></li>
+<li><a href="decisionengine/framework/tests/WriteToDisk.html">decisionengine.framework.tests.WriteToDisk</a></li>
 <li><a href="decisionengine/framework/tests/test_client_errors.html">decisionengine.framework.tests.test_client_errors</a></li>
 <li><a href="decisionengine/framework/tests/test_client_server.html">decisionengine.framework.tests.test_client_server</a></li>
 <li><a href="decisionengine/framework/tests/test_defaults.html">decisionengine.framework.tests.test_defaults</a></li>
+<li><a href="decisionengine/framework/tests/test_dynamic_test_modules.html">decisionengine.framework.tests.test_dynamic_test_modules</a></li>
+<li><a href="decisionengine/framework/tests/test_empty_config.html">decisionengine.framework.tests.test_empty_config</a></li>
 <li><a href="decisionengine/framework/tests/test_error_on_acquire.html">decisionengine.framework.tests.test_error_on_acquire</a></li>
 <li><a href="decisionengine/framework/tests/test_module_program_options.html">decisionengine.framework.tests.test_module_program_options</a></li>
 <li><a href="decisionengine/framework/tests/test_query_tool_server.html">decisionengine.framework.tests.test_query_tool_server</a></li>
 <li><a href="decisionengine/framework/tests/test_reaper.html">decisionengine.framework.tests.test_reaper</a></li>
-<li><a href="decisionengine/framework/tests/test_restart_channel.html">decisionengine.framework.tests.test_restart_channel</a></li>
 <li><a href="decisionengine/framework/tests/test_sample_config.html">decisionengine.framework.tests.test_sample_config</a></li>
 <li><a href="decisionengine/framework/tests/test_source_proxy.html">decisionengine.framework.tests.test_source_proxy</a></li>
+<li><a href="decisionengine/framework/tests/test_source_proxy_3G.html">decisionengine.framework.tests.test_source_proxy_3G</a></li>
 <li><a href="decisionengine/framework/tests/test_start_with_bad_channels.html">decisionengine.framework.tests.test_start_with_bad_channels</a></li>
-<li><a href="decisionengine/framework/tests/test_start_with_no_channels.html">decisionengine.framework.tests.test_start_with_no_channels</a></li>
 <li><a href="decisionengine/framework/util/fs.html">decisionengine.framework.util.fs</a></li>
+<li><a href="decisionengine/framework/util/logparser.html">decisionengine.framework.util.logparser</a></li>
 <li><a href="decisionengine/framework/util/metrics.html">decisionengine.framework.util.metrics</a></li>
 <li><a href="decisionengine/framework/util/reaper.html">decisionengine.framework.util.reaper</a></li>
 <li><a href="decisionengine/framework/util/singleton.html">decisionengine.framework.util.singleton</a></li>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>decisionengine.framework.tests package &mdash; decisionengine 1.2.1.dev413+ga4a7938 documentation</title>
+  <title>decisionengine.framework.tests package &mdash; decisionengine 1.2.1.dev473+g6fa0bf4 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -40,6 +40,9 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.7.html">Latest</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing and running HEPCloud’s Decision Engine</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../jenkins.html">Decisionengine CI with Jenkins pipeline</a></li>
@@ -101,16 +104,16 @@
 <span id="decisionengine-framework-tests-abtransform-module"></span><h2>decisionengine.framework.tests.ABTransform module<a class="headerlink" href="#module-decisionengine.framework.tests.ABTransform" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ABTransform.ABTransform">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ABTransform.</span></span><span class="sig-name descname"><span class="pre">ABTransform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ABTransform.html#ABTransform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ABTransform.ABTransform" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ABTransform.</span></span><span class="sig-name descname"><span class="pre">ABTransform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ABTransform.html#ABTransform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ABTransform.ABTransform" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Transform.Transform" title="decisionengine.framework.modules.Transform.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Transform.Transform</span></code></a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ABTransform.ABTransform._consumes">
-<span class="sig-name descname"><span class="pre">_consumes</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'B':</span> <span class="pre">None}</span></em><a class="headerlink" href="#decisionengine.framework.tests.ABTransform.ABTransform._consumes" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_consumes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'B':</span> <span class="pre">None}</span></em><a class="headerlink" href="#decisionengine.framework.tests.ABTransform.ABTransform._consumes" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ABTransform.ABTransform._produces">
-<span class="sig-name descname"><span class="pre">_produces</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'A':</span> <span class="pre">None}</span></em><a class="headerlink" href="#decisionengine.framework.tests.ABTransform.ABTransform._produces" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_produces</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'A':</span> <span class="pre">None}</span></em><a class="headerlink" href="#decisionengine.framework.tests.ABTransform.ABTransform._produces" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -120,16 +123,73 @@
 <span id="decisionengine-framework-tests-batransform-module"></span><h2>decisionengine.framework.tests.BATransform module<a class="headerlink" href="#module-decisionengine.framework.tests.BATransform" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.BATransform.BATransform">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.BATransform.</span></span><span class="sig-name descname"><span class="pre">BATransform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/BATransform.html#BATransform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.BATransform.BATransform" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.BATransform.</span></span><span class="sig-name descname"><span class="pre">BATransform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/BATransform.html#BATransform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.BATransform.BATransform" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Transform.Transform" title="decisionengine.framework.modules.Transform.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Transform.Transform</span></code></a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.BATransform.BATransform._consumes">
-<span class="sig-name descname"><span class="pre">_consumes</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'A':</span> <span class="pre">None}</span></em><a class="headerlink" href="#decisionengine.framework.tests.BATransform.BATransform._consumes" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_consumes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'A':</span> <span class="pre">None}</span></em><a class="headerlink" href="#decisionengine.framework.tests.BATransform.BATransform._consumes" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.BATransform.BATransform._produces">
-<span class="sig-name descname"><span class="pre">_produces</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'B':</span> <span class="pre">None}</span></em><a class="headerlink" href="#decisionengine.framework.tests.BATransform.BATransform._produces" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_produces</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'B':</span> <span class="pre">None}</span></em><a class="headerlink" href="#decisionengine.framework.tests.BATransform.BATransform._produces" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-decisionengine.framework.tests.DynamicPublisher">
+<span id="decisionengine-framework-tests-dynamicpublisher-module"></span><h2>decisionengine.framework.tests.DynamicPublisher module<a class="headerlink" href="#module-decisionengine.framework.tests.DynamicPublisher" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.DynamicPublisher.DynamicPublisher">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.DynamicPublisher.</span></span><span class="sig-name descname"><span class="pre">DynamicPublisher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/DynamicPublisher.html#DynamicPublisher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.DynamicPublisher.DynamicPublisher" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Publisher.Publisher" title="decisionengine.framework.modules.Publisher.Publisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Publisher.Publisher</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.DynamicPublisher.DynamicPublisher._supported_config">
+<span class="sig-name descname"><span class="pre">_supported_config</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'consumes':</span> <span class="pre">(&lt;class</span> <span class="pre">'list'&gt;,</span> <span class="pre">None,</span> <span class="pre">None),</span> <span class="pre">'expects':</span> <span class="pre">(&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">None,</span> <span class="pre">None)}</span></em><a class="headerlink" href="#decisionengine.framework.tests.DynamicPublisher.DynamicPublisher._supported_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.DynamicPublisher.DynamicPublisher.publisher">
+<span class="sig-name descname"><span class="pre">publisher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_block</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/DynamicPublisher.html#DynamicPublisher.publisher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.DynamicPublisher.DynamicPublisher.publisher" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-decisionengine.framework.tests.DynamicSource">
+<span id="decisionengine-framework-tests-dynamicsource-module"></span><h2>decisionengine.framework.tests.DynamicSource module<a class="headerlink" href="#module-decisionengine.framework.tests.DynamicSource" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.DynamicSource.DynamicSource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.DynamicSource.</span></span><span class="sig-name descname"><span class="pre">DynamicSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/DynamicSource.html#DynamicSource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.DynamicSource.DynamicSource" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Source.Source" title="decisionengine.framework.modules.Source.Source"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Source.Source</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.DynamicSource.DynamicSource._supported_config">
+<span class="sig-name descname"><span class="pre">_supported_config</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'data_product_name':</span> <span class="pre">(&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">None,</span> <span class="pre">None)}</span></em><a class="headerlink" href="#decisionengine.framework.tests.DynamicSource.DynamicSource._supported_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.DynamicSource.DynamicSource.acquire">
+<span class="sig-name descname"><span class="pre">acquire</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/DynamicSource.html#DynamicSource.acquire"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.DynamicSource.DynamicSource.acquire" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-decisionengine.framework.tests.DynamicTransform">
+<span id="decisionengine-framework-tests-dynamictransform-module"></span><h2>decisionengine.framework.tests.DynamicTransform module<a class="headerlink" href="#module-decisionengine.framework.tests.DynamicTransform" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.DynamicTransform.DynamicTransform">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.DynamicTransform.</span></span><span class="sig-name descname"><span class="pre">DynamicTransform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/DynamicTransform.html#DynamicTransform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.DynamicTransform.DynamicTransform" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Transform.Transform" title="decisionengine.framework.modules.Transform.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Transform.Transform</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.DynamicTransform.DynamicTransform._supported_config">
+<span class="sig-name descname"><span class="pre">_supported_config</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'consumes':</span> <span class="pre">(&lt;class</span> <span class="pre">'list'&gt;,</span> <span class="pre">None,</span> <span class="pre">None),</span> <span class="pre">'data_product_name':</span> <span class="pre">(&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">None,</span> <span class="pre">None)}</span></em><a class="headerlink" href="#decisionengine.framework.tests.DynamicTransform.DynamicTransform._supported_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.DynamicTransform.DynamicTransform.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_block</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/DynamicTransform.html#DynamicTransform.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.DynamicTransform.DynamicTransform.transform" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -139,11 +199,11 @@
 <span id="decisionengine-framework-tests-erroronacquire-module"></span><h2>decisionengine.framework.tests.ErrorOnAcquire module<a class="headerlink" href="#module-decisionengine.framework.tests.ErrorOnAcquire" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ErrorOnAcquire.ErrorOnAcquire">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ErrorOnAcquire.</span></span><span class="sig-name descname"><span class="pre">ErrorOnAcquire</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ErrorOnAcquire.html#ErrorOnAcquire"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ErrorOnAcquire.ErrorOnAcquire" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ErrorOnAcquire.</span></span><span class="sig-name descname"><span class="pre">ErrorOnAcquire</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ErrorOnAcquire.html#ErrorOnAcquire"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ErrorOnAcquire.ErrorOnAcquire" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Source.Source" title="decisionengine.framework.modules.Source.Source"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Source.Source</span></code></a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ErrorOnAcquire.ErrorOnAcquire._produces">
-<span class="sig-name descname"><span class="pre">_produces</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'_placeholder':</span> <span class="pre">None}</span></em><a class="headerlink" href="#decisionengine.framework.tests.ErrorOnAcquire.ErrorOnAcquire._produces" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_produces</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'_placeholder':</span> <span class="pre">None}</span></em><a class="headerlink" href="#decisionengine.framework.tests.ErrorOnAcquire.ErrorOnAcquire._produces" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -158,11 +218,11 @@
 <span id="decisionengine-framework-tests-failingpublisher-module"></span><h2>decisionengine.framework.tests.FailingPublisher module<a class="headerlink" href="#module-decisionengine.framework.tests.FailingPublisher" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.FailingPublisher.FailingPublisher">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.FailingPublisher.</span></span><span class="sig-name descname"><span class="pre">FailingPublisher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/FailingPublisher.html#FailingPublisher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.FailingPublisher.FailingPublisher" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.FailingPublisher.</span></span><span class="sig-name descname"><span class="pre">FailingPublisher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/FailingPublisher.html#FailingPublisher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.FailingPublisher.FailingPublisher" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Publisher.Publisher" title="decisionengine.framework.modules.Publisher.Publisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Publisher.Publisher</span></code></a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.FailingPublisher.FailingPublisher._consumes">
-<span class="sig-name descname"><span class="pre">_consumes</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'bar':</span> <span class="pre">None}</span></em><a class="headerlink" href="#decisionengine.framework.tests.FailingPublisher.FailingPublisher._consumes" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_consumes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'bar':</span> <span class="pre">None}</span></em><a class="headerlink" href="#decisionengine.framework.tests.FailingPublisher.FailingPublisher._consumes" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -177,23 +237,8 @@
 <span id="decisionengine-framework-tests-failingsourcenop-module"></span><h2>decisionengine.framework.tests.FailingSourceNOP module<a class="headerlink" href="#module-decisionengine.framework.tests.FailingSourceNOP" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.FailingSourceNOP.SourceWithMissingProduces">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.FailingSourceNOP.</span></span><span class="sig-name descname"><span class="pre">SourceWithMissingProduces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">set_of_parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/FailingSourceNOP.html#SourceWithMissingProduces"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.FailingSourceNOP.SourceWithMissingProduces" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.FailingSourceNOP.</span></span><span class="sig-name descname"><span class="pre">SourceWithMissingProduces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">set_of_parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/FailingSourceNOP.html#SourceWithMissingProduces"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.FailingSourceNOP.SourceWithMissingProduces" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Source.Source" title="decisionengine.framework.modules.Source.Source"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Source.Source</span></code></a></p>
-</dd></dl>
-
-</section>
-<section id="module-decisionengine.framework.tests.FailingSourceProxy">
-<span id="decisionengine-framework-tests-failingsourceproxy-module"></span><h2>decisionengine.framework.tests.FailingSourceProxy module<a class="headerlink" href="#module-decisionengine.framework.tests.FailingSourceProxy" title="Permalink to this headline"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="decisionengine.framework.tests.FailingSourceProxy.FailingSourceProxy">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.FailingSourceProxy.</span></span><span class="sig-name descname"><span class="pre">FailingSourceProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/FailingSourceProxy.html#FailingSourceProxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.FailingSourceProxy.FailingSourceProxy" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.SourceProxy.SourceProxy" title="decisionengine.framework.modules.SourceProxy.SourceProxy"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.SourceProxy.SourceProxy</span></code></a></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="decisionengine.framework.tests.FailingSourceProxy.FailingSourceProxy.acquire">
-<span class="sig-name descname"><span class="pre">acquire</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/FailingSourceProxy.html#FailingSourceProxy.acquire"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.FailingSourceProxy.FailingSourceProxy.acquire" title="Permalink to this definition"></a></dt>
-<dd><p>Overrides Source class method</p>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -201,7 +246,7 @@
 <span id="decisionengine-framework-tests-moduleprogramoptions-module"></span><h2>decisionengine.framework.tests.ModuleProgramOptions module<a class="headerlink" href="#module-decisionengine.framework.tests.ModuleProgramOptions" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ModuleProgramOptions.AcquireWithConfig">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ModuleProgramOptions.</span></span><span class="sig-name descname"><span class="pre">AcquireWithConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ModuleProgramOptions.html#AcquireWithConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ModuleProgramOptions.AcquireWithConfig" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ModuleProgramOptions.</span></span><span class="sig-name descname"><span class="pre">AcquireWithConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ModuleProgramOptions.html#AcquireWithConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ModuleProgramOptions.AcquireWithConfig" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ModuleProgramOptions.AcquireWithConfig.test">
@@ -212,7 +257,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ModuleProgramOptions.AcquireWithSampleConfig">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ModuleProgramOptions.</span></span><span class="sig-name descname"><span class="pre">AcquireWithSampleConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ModuleProgramOptions.html#AcquireWithSampleConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ModuleProgramOptions.AcquireWithSampleConfig" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ModuleProgramOptions.</span></span><span class="sig-name descname"><span class="pre">AcquireWithSampleConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ModuleProgramOptions.html#AcquireWithSampleConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ModuleProgramOptions.AcquireWithSampleConfig" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ModuleProgramOptions.AcquireWithSampleConfig.test">
@@ -223,7 +268,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ModuleProgramOptions.ConfigTemplate">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ModuleProgramOptions.</span></span><span class="sig-name descname"><span class="pre">ConfigTemplate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ModuleProgramOptions.html#ConfigTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ModuleProgramOptions.ConfigTemplate" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ModuleProgramOptions.</span></span><span class="sig-name descname"><span class="pre">ConfigTemplate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ModuleProgramOptions.html#ConfigTemplate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ModuleProgramOptions.ConfigTemplate" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ModuleProgramOptions.ConfigTemplate.test">
@@ -234,7 +279,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ModuleProgramOptions.Describe">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ModuleProgramOptions.</span></span><span class="sig-name descname"><span class="pre">Describe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ModuleProgramOptions.html#Describe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ModuleProgramOptions.Describe" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ModuleProgramOptions.</span></span><span class="sig-name descname"><span class="pre">Describe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ModuleProgramOptions.html#Describe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ModuleProgramOptions.Describe" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ModuleProgramOptions.Describe.test">
@@ -245,7 +290,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ModuleProgramOptions.DescribeAlias">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ModuleProgramOptions.</span></span><span class="sig-name descname"><span class="pre">DescribeAlias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ModuleProgramOptions.html#DescribeAlias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ModuleProgramOptions.DescribeAlias" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ModuleProgramOptions.</span></span><span class="sig-name descname"><span class="pre">DescribeAlias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ModuleProgramOptions.html#DescribeAlias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ModuleProgramOptions.DescribeAlias" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ModuleProgramOptions.DescribeAlias.test">
@@ -256,7 +301,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ModuleProgramOptions.Help">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ModuleProgramOptions.</span></span><span class="sig-name descname"><span class="pre">Help</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ModuleProgramOptions.html#Help"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ModuleProgramOptions.Help" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.ModuleProgramOptions.</span></span><span class="sig-name descname"><span class="pre">Help</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/ModuleProgramOptions.html#Help"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.ModuleProgramOptions.Help" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.ModuleProgramOptions.Help.test">
@@ -305,11 +350,11 @@
 <span id="decisionengine-framework-tests-publishernop-module"></span><h2>decisionengine.framework.tests.PublisherNOP module<a class="headerlink" href="#module-decisionengine.framework.tests.PublisherNOP" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.PublisherNOP.PublisherNOP">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.PublisherNOP.</span></span><span class="sig-name descname"><span class="pre">PublisherNOP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/PublisherNOP.html#PublisherNOP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.PublisherNOP.PublisherNOP" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.PublisherNOP.</span></span><span class="sig-name descname"><span class="pre">PublisherNOP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/PublisherNOP.html#PublisherNOP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.PublisherNOP.PublisherNOP" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Publisher.Publisher" title="decisionengine.framework.modules.Publisher.Publisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Publisher.Publisher</span></code></a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.PublisherNOP.PublisherNOP._consumes">
-<span class="sig-name descname"><span class="pre">_consumes</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'bar':</span> <span class="pre">&lt;class</span> <span class="pre">'pandas.core.frame.DataFrame'&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.tests.PublisherNOP.PublisherNOP._consumes" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_consumes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'bar':</span> <span class="pre">&lt;class</span> <span class="pre">'pandas.core.frame.DataFrame'&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.tests.PublisherNOP.PublisherNOP._consumes" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -324,7 +369,7 @@
 <span id="decisionengine-framework-tests-publisherwithmissingconsumes-module"></span><h2>decisionengine.framework.tests.PublisherWithMissingConsumes module<a class="headerlink" href="#module-decisionengine.framework.tests.PublisherWithMissingConsumes" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.PublisherWithMissingConsumes.PublisherWithMissingConsumes">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.PublisherWithMissingConsumes.</span></span><span class="sig-name descname"><span class="pre">PublisherWithMissingConsumes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">set_of_parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/PublisherWithMissingConsumes.html#PublisherWithMissingConsumes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.PublisherWithMissingConsumes.PublisherWithMissingConsumes" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.PublisherWithMissingConsumes.</span></span><span class="sig-name descname"><span class="pre">PublisherWithMissingConsumes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">set_of_parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/PublisherWithMissingConsumes.html#PublisherWithMissingConsumes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.PublisherWithMissingConsumes.PublisherWithMissingConsumes" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Publisher.Publisher" title="decisionengine.framework.modules.Publisher.Publisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Publisher.Publisher</span></code></a></p>
 </dd></dl>
 
@@ -336,11 +381,11 @@
 <span id="decisionengine-framework-tests-sourcenop-module"></span><h2>decisionengine.framework.tests.SourceNOP module<a class="headerlink" href="#module-decisionengine.framework.tests.SourceNOP" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.SourceNOP.SourceNOP">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.SourceNOP.</span></span><span class="sig-name descname"><span class="pre">SourceNOP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/SourceNOP.html#SourceNOP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.SourceNOP.SourceNOP" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.SourceNOP.</span></span><span class="sig-name descname"><span class="pre">SourceNOP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/SourceNOP.html#SourceNOP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.SourceNOP.SourceNOP" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Source.Source" title="decisionengine.framework.modules.Source.Source"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Source.Source</span></code></a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.SourceNOP.SourceNOP._produces">
-<span class="sig-name descname"><span class="pre">_produces</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'foo':</span> <span class="pre">&lt;class</span> <span class="pre">'pandas.core.frame.DataFrame'&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.tests.SourceNOP.SourceNOP._produces" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_produces</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'foo':</span> <span class="pre">&lt;class</span> <span class="pre">'pandas.core.frame.DataFrame'&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.tests.SourceNOP.SourceNOP._produces" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -355,16 +400,16 @@
 <span id="decisionengine-framework-tests-sourcewithsampleconfignop-module"></span><h2>decisionengine.framework.tests.SourceWithSampleConfigNOP module<a class="headerlink" href="#module-decisionengine.framework.tests.SourceWithSampleConfigNOP" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.SourceWithSampleConfigNOP.SourceWithSampleConfigNOP">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.SourceWithSampleConfigNOP.</span></span><span class="sig-name descname"><span class="pre">SourceWithSampleConfigNOP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/SourceWithSampleConfigNOP.html#SourceWithSampleConfigNOP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.SourceWithSampleConfigNOP.SourceWithSampleConfigNOP" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.SourceWithSampleConfigNOP.</span></span><span class="sig-name descname"><span class="pre">SourceWithSampleConfigNOP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/SourceWithSampleConfigNOP.html#SourceWithSampleConfigNOP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.SourceWithSampleConfigNOP.SourceWithSampleConfigNOP" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Source.Source" title="decisionengine.framework.modules.Source.Source"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Source.Source</span></code></a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.SourceWithSampleConfigNOP.SourceWithSampleConfigNOP._produces">
-<span class="sig-name descname"><span class="pre">_produces</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'foo':</span> <span class="pre">&lt;class</span> <span class="pre">'pandas.core.frame.DataFrame'&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.tests.SourceWithSampleConfigNOP.SourceWithSampleConfigNOP._produces" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_produces</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'foo':</span> <span class="pre">&lt;class</span> <span class="pre">'pandas.core.frame.DataFrame'&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.tests.SourceWithSampleConfigNOP.SourceWithSampleConfigNOP._produces" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.SourceWithSampleConfigNOP.SourceWithSampleConfigNOP._supported_config">
-<span class="sig-name descname"><span class="pre">_supported_config</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'channel_name':</span> <span class="pre">(&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">None,</span> <span class="pre">None),</span> <span class="pre">'multiplier':</span> <span class="pre">(&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">None,</span> <span class="pre">None)}</span></em><a class="headerlink" href="#decisionengine.framework.tests.SourceWithSampleConfigNOP.SourceWithSampleConfigNOP._supported_config" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_supported_config</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'channel_name':</span> <span class="pre">(&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">None,</span> <span class="pre">None),</span> <span class="pre">'multiplier':</span> <span class="pre">(&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">None,</span> <span class="pre">None)}</span></em><a class="headerlink" href="#decisionengine.framework.tests.SourceWithSampleConfigNOP.SourceWithSampleConfigNOP._supported_config" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -379,11 +424,11 @@
 <span id="decisionengine-framework-tests-supportsconfigpublisher-module"></span><h2>decisionengine.framework.tests.SupportsConfigPublisher module<a class="headerlink" href="#module-decisionengine.framework.tests.SupportsConfigPublisher" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.SupportsConfigPublisher.SupportsConfig">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.SupportsConfigPublisher.</span></span><span class="sig-name descname"><span class="pre">SupportsConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">set_of_parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/SupportsConfigPublisher.html#SupportsConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.SupportsConfigPublisher.SupportsConfig" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.SupportsConfigPublisher.</span></span><span class="sig-name descname"><span class="pre">SupportsConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">set_of_parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/SupportsConfigPublisher.html#SupportsConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.SupportsConfigPublisher.SupportsConfig" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Publisher.Publisher" title="decisionengine.framework.modules.Publisher.Publisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Publisher.Publisher</span></code></a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.SupportsConfigPublisher.SupportsConfig._supported_config">
-<span class="sig-name descname"><span class="pre">_supported_config</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'comment':</span> <span class="pre">(&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">None,</span> <span class="pre">'Single-line</span> <span class="pre">comment'),</span> <span class="pre">'comment_with_nl':</span> <span class="pre">(&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">None,</span> <span class="pre">'Comment</span> <span class="pre">with</span> <span class="pre">newline\n'),</span> <span class="pre">'convert_to':</span> <span class="pre">(&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">3,</span> <span class="pre">None),</span> <span class="pre">'default_only':</span> <span class="pre">(&lt;class</span> <span class="pre">'float'&gt;,</span> <span class="pre">2.5,</span> <span class="pre">None),</span> <span class="pre">'no_type':</span> <span class="pre">(None,</span> <span class="pre">None,</span> <span class="pre">None),</span> <span class="pre">'only_type':</span> <span class="pre">(&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">None,</span> <span class="pre">None)}</span></em><a class="headerlink" href="#decisionengine.framework.tests.SupportsConfigPublisher.SupportsConfig._supported_config" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_supported_config</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'comment':</span> <span class="pre">(&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">None,</span> <span class="pre">'Single-line</span> <span class="pre">comment'),</span> <span class="pre">'comment_with_nl':</span> <span class="pre">(&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">None,</span> <span class="pre">'Comment</span> <span class="pre">with</span> <span class="pre">newline\n'),</span> <span class="pre">'convert_to':</span> <span class="pre">(&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">3,</span> <span class="pre">None),</span> <span class="pre">'default_only':</span> <span class="pre">(&lt;class</span> <span class="pre">'float'&gt;,</span> <span class="pre">2.5,</span> <span class="pre">None),</span> <span class="pre">'no_type':</span> <span class="pre">(None,</span> <span class="pre">None,</span> <span class="pre">None),</span> <span class="pre">'only_type':</span> <span class="pre">(&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">None,</span> <span class="pre">None)}</span></em><a class="headerlink" href="#decisionengine.framework.tests.SupportsConfigPublisher.SupportsConfig._supported_config" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -393,16 +438,16 @@
 <span id="decisionengine-framework-tests-transformnop-module"></span><h2>decisionengine.framework.tests.TransformNOP module<a class="headerlink" href="#module-decisionengine.framework.tests.TransformNOP" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.TransformNOP.TransformNOP">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.TransformNOP.</span></span><span class="sig-name descname"><span class="pre">TransformNOP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/TransformNOP.html#TransformNOP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.TransformNOP.TransformNOP" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.TransformNOP.</span></span><span class="sig-name descname"><span class="pre">TransformNOP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/TransformNOP.html#TransformNOP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.TransformNOP.TransformNOP" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Transform.Transform" title="decisionengine.framework.modules.Transform.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Transform.Transform</span></code></a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.TransformNOP.TransformNOP._consumes">
-<span class="sig-name descname"><span class="pre">_consumes</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'foo':</span> <span class="pre">&lt;class</span> <span class="pre">'pandas.core.frame.DataFrame'&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.tests.TransformNOP.TransformNOP._consumes" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_consumes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'foo':</span> <span class="pre">&lt;class</span> <span class="pre">'pandas.core.frame.DataFrame'&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.tests.TransformNOP.TransformNOP._consumes" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.TransformNOP.TransformNOP._produces">
-<span class="sig-name descname"><span class="pre">_produces</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'bar':</span> <span class="pre">&lt;class</span> <span class="pre">'pandas.core.frame.DataFrame'&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.tests.TransformNOP.TransformNOP._produces" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_produces</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'bar':</span> <span class="pre">&lt;class</span> <span class="pre">'pandas.core.frame.DataFrame'&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.tests.TransformNOP.TransformNOP._produces" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -417,7 +462,7 @@
 <span id="decisionengine-framework-tests-transformwithmissingproducesconsumes-module"></span><h2>decisionengine.framework.tests.TransformWithMissingProducesConsumes module<a class="headerlink" href="#module-decisionengine.framework.tests.TransformWithMissingProducesConsumes" title="Permalink to this headline"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.TransformWithMissingProducesConsumes.TransformWithMissingProducesConsumes">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.TransformWithMissingProducesConsumes.</span></span><span class="sig-name descname"><span class="pre">TransformWithMissingProducesConsumes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/TransformWithMissingProducesConsumes.html#TransformWithMissingProducesConsumes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.TransformWithMissingProducesConsumes.TransformWithMissingProducesConsumes" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.TransformWithMissingProducesConsumes.</span></span><span class="sig-name descname"><span class="pre">TransformWithMissingProducesConsumes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/TransformWithMissingProducesConsumes.html#TransformWithMissingProducesConsumes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.TransformWithMissingProducesConsumes.TransformWithMissingProducesConsumes" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Transform.Transform" title="decisionengine.framework.modules.Transform.Transform"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Transform.Transform</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.TransformWithMissingProducesConsumes.TransformWithMissingProducesConsumes.transform">
@@ -427,19 +472,44 @@
 </dd></dl>
 
 </section>
-<section id="module-decisionengine.framework.tests.WorkingSourceProxy">
-<span id="decisionengine-framework-tests-workingsourceproxy-module"></span><h2>decisionengine.framework.tests.WorkingSourceProxy module<a class="headerlink" href="#module-decisionengine.framework.tests.WorkingSourceProxy" title="Permalink to this headline"></a></h2>
+<section id="module-decisionengine.framework.tests.WriteToDisk">
+<span id="decisionengine-framework-tests-writetodisk-module"></span><h2>decisionengine.framework.tests.WriteToDisk module<a class="headerlink" href="#module-decisionengine.framework.tests.WriteToDisk" title="Permalink to this headline"></a></h2>
+<p>Special publisher used to register publish calls with an external file.</p>
+<p>It is difficult to interact with individual publishers while testing a
+workflow.  The WriteToDisk publisher therefore writes to an external
+file that can be read by a test.  Ideally, we would implement a system
+so that the test and any instance of the WriteToDisk class are passed
+the same file-name string.  Unfortunately, this is non-trivial to
+achieve without adjusting the behavior of the decision-engine server
+itself.  We therefore choose the following abstruse logic:</p>
+<ul class="simple">
+<li><p>WriteToDisk creates a temporary file and broadcasts its name to
+STDOUT.  Note that this temporary file must be uniquely named as
+multiple tests can use WriteToDisk in parallel.</p></li>
+<li><p>Capture STDOUT in the DETestWorker class.</p></li>
+<li><p>Pass STDOUT to the ‘wait_for_n_writes’ which will wait until the
+number ‘n’ appears in the file.</p></li>
+</ul>
 <dl class="py class">
-<dt class="sig sig-object py" id="decisionengine.framework.tests.WorkingSourceProxy.WorkingSourceProxy">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.WorkingSourceProxy.</span></span><span class="sig-name descname"><span class="pre">WorkingSourceProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/WorkingSourceProxy.html#WorkingSourceProxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.WorkingSourceProxy.WorkingSourceProxy" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.SourceProxy.SourceProxy" title="decisionengine.framework.modules.SourceProxy.SourceProxy"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.SourceProxy.SourceProxy</span></code></a></p>
+<dt class="sig sig-object py" id="decisionengine.framework.tests.WriteToDisk.WriteToDisk">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.WriteToDisk.</span></span><span class="sig-name descname"><span class="pre">WriteToDisk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/WriteToDisk.html#WriteToDisk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.WriteToDisk.WriteToDisk" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="decisionengine.framework.modules.html#decisionengine.framework.modules.Publisher.Publisher" title="decisionengine.framework.modules.Publisher.Publisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.modules.Publisher.Publisher</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.WriteToDisk.WriteToDisk._supported_config">
+<span class="sig-name descname"><span class="pre">_supported_config</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'consumes':</span> <span class="pre">(&lt;class</span> <span class="pre">'list'&gt;,</span> <span class="pre">None,</span> <span class="pre">None),</span> <span class="pre">'filename':</span> <span class="pre">(&lt;class</span> <span class="pre">'str'&gt;,</span> <span class="pre">None,</span> <span class="pre">None)}</span></em><a class="headerlink" href="#decisionengine.framework.tests.WriteToDisk.WriteToDisk._supported_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
-<dt class="sig sig-object py" id="decisionengine.framework.tests.WorkingSourceProxy.WorkingSourceProxy.acquire">
-<span class="sig-name descname"><span class="pre">acquire</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/WorkingSourceProxy.html#WorkingSourceProxy.acquire"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.WorkingSourceProxy.WorkingSourceProxy.acquire" title="Permalink to this definition"></a></dt>
-<dd><p>Overrides Source class method</p>
-</dd></dl>
+<dt class="sig sig-object py" id="decisionengine.framework.tests.WriteToDisk.WriteToDisk.publish">
+<span class="sig-name descname"><span class="pre">publish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_block</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/WriteToDisk.html#WriteToDisk.publish"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.WriteToDisk.WriteToDisk.publish" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.WriteToDisk.wait_for_n_writes">
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.WriteToDisk.</span></span><span class="sig-name descname"><span class="pre">wait_for_n_writes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stdout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/WriteToDisk.html#wait_for_n_writes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.WriteToDisk.wait_for_n_writes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </section>
 <section id="module-decisionengine.framework.tests.fixtures">
@@ -447,13 +517,13 @@
 <p>defaults for pytest</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.fixtures.DEServer">
-<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.fixtures.</span></span><span class="sig-name descname"><span class="pre">DEServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conf_override</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_conf_override</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'127.0.0.1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/engine/tests/fixtures.html#DEServer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.fixtures.DEServer" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.fixtures.</span></span><span class="sig-name descname"><span class="pre">DEServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conf_override</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_conf_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_conf_override</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'127.0.0.1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_conf_dirs_if_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/engine/tests/fixtures.html#DEServer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.fixtures.DEServer" title="Permalink to this definition"></a></dt>
 <dd><p>A DE Server using a private database</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.fixtures.PG_DE_DB_WITHOUT_SCHEMA">
-<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.fixtures.</span></span><span class="sig-name descname"><span class="pre">PG_DE_DB_WITHOUT_SCHEMA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">_pytest.fixtures.FixtureRequest</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">psycopg2.extensions.connection</span></span></span><a class="headerlink" href="#decisionengine.framework.tests.fixtures.PG_DE_DB_WITHOUT_SCHEMA" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.fixtures.</span></span><span class="sig-name descname"><span class="pre">PG_DE_DB_WITHOUT_SCHEMA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_pytest.fixtures.FixtureRequest</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">psycopg2.extensions.connection</span></span></span><a class="headerlink" href="#decisionengine.framework.tests.fixtures.PG_DE_DB_WITHOUT_SCHEMA" title="Permalink to this definition"></a></dt>
 <dd><p>Fixture factory for PostgreSQL.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -466,16 +536,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="decisionengine.framework.tests.fixtures.PG_DE_DB_WITH_SCHEMA">
-<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.fixtures.</span></span><span class="sig-name descname"><span class="pre">PG_DE_DB_WITH_SCHEMA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">PG_DE_DB_WITHOUT_SCHEMA</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/tests/fixtures.html#PG_DE_DB_WITH_SCHEMA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.fixtures.PG_DE_DB_WITH_SCHEMA" title="Permalink to this definition"></a></dt>
-<dd><p>Load our PG schema into the database via this fixture
-so pytest knows the limitations on parallel usage of this
-database scope.</p>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.fixtures.PG_PROG">
-<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.fixtures.</span></span><span class="sig-name descname"><span class="pre">PG_PROG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">_pytest.fixtures.FixtureRequest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tmpdir_factory</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">_pytest.tmpdir.TempdirFactory</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">pytest_postgresql.executor.PostgreSQLExecutor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#decisionengine.framework.tests.fixtures.PG_PROG" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.fixtures.</span></span><span class="sig-name descname"><span class="pre">PG_PROG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_pytest.fixtures.FixtureRequest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tmpdir_factory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_pytest.tmpdir.TempdirFactory</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">pytest_postgresql.executor.PostgreSQLExecutor</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#decisionengine.framework.tests.fixtures.PG_PROG" title="Permalink to this definition"></a></dt>
 <dd><p>Process fixture for PostgreSQL.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -592,6 +654,34 @@ The SQLAlchemyDS will create the schema as needed.</p>
 </dd></dl>
 
 </section>
+<section id="module-decisionengine.framework.tests.test_dynamic_test_modules">
+<span id="decisionengine-framework-tests-test-dynamic-test-modules-module"></span><h2>decisionengine.framework.tests.test_dynamic_test_modules module<a class="headerlink" href="#module-decisionengine.framework.tests.test_dynamic_test_modules" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.test_dynamic_test_modules.test_dynamic_publisher">
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_dynamic_test_modules.</span></span><span class="sig-name descname"><span class="pre">test_dynamic_publisher</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_dynamic_test_modules.html#test_dynamic_publisher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_dynamic_test_modules.test_dynamic_publisher" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.test_dynamic_test_modules.test_dynamic_source">
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_dynamic_test_modules.</span></span><span class="sig-name descname"><span class="pre">test_dynamic_source</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_dynamic_test_modules.html#test_dynamic_source"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_dynamic_test_modules.test_dynamic_source" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.test_dynamic_test_modules.test_dynamic_transform">
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_dynamic_test_modules.</span></span><span class="sig-name descname"><span class="pre">test_dynamic_transform</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_dynamic_test_modules.html#test_dynamic_transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_dynamic_test_modules.test_dynamic_transform" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-decisionengine.framework.tests.test_empty_config">
+<span id="decisionengine-framework-tests-test-empty-config-module"></span><h2>decisionengine.framework.tests.test_empty_config module<a class="headerlink" href="#module-decisionengine.framework.tests.test_empty_config" title="Permalink to this headline"></a></h2>
+<p>Fixture based DE Server tests of adding a channel later on</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.test_empty_config.test_client_can_start_one_channel_added_after_startup">
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_empty_config.</span></span><span class="sig-name descname"><span class="pre">test_client_can_start_one_channel_added_after_startup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deserver</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_empty_config.html#test_client_can_start_one_channel_added_after_startup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_empty_config.test_client_can_start_one_channel_added_after_startup" title="Permalink to this definition"></a></dt>
+<dd><p>Verify client can start a single channel</p>
+</dd></dl>
+
+</section>
 <section id="module-decisionengine.framework.tests.test_error_on_acquire">
 <span id="decisionengine-framework-tests-test-error-on-acquire-module"></span><h2>decisionengine.framework.tests.test_error_on_acquire module<a class="headerlink" href="#module-decisionengine.framework.tests.test_error_on_acquire" title="Permalink to this headline"></a></h2>
 <dl class="py function">
@@ -677,19 +767,6 @@ The SQLAlchemyDS will create the schema as needed.</p>
 <span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_reaper.</span></span><span class="sig-name descname"><span class="pre">test_client_can_get_de_server_reaper_stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deserver</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_reaper.html#test_client_can_get_de_server_reaper_stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_reaper.test_client_can_get_de_server_reaper_stop" title="Permalink to this definition"></a></dt>
 <dd><p>Verify reaper can stop</p>
 </dd></dl>
-
-</section>
-<section id="module-decisionengine.framework.tests.test_restart_channel">
-<span id="decisionengine-framework-tests-test-restart-channel-module"></span><h2>decisionengine.framework.tests.test_restart_channel module<a class="headerlink" href="#module-decisionengine.framework.tests.test_restart_channel" title="Permalink to this headline"></a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="decisionengine.framework.tests.test_restart_channel.deserver_mock_data_block">
-<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_restart_channel.</span></span><span class="sig-name descname"><span class="pre">deserver_mock_data_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mock_data_block</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_restart_channel.html#deserver_mock_data_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_restart_channel.deserver_mock_data_block" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="decisionengine.framework.tests.test_restart_channel.test_restart_channel">
-<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_restart_channel.</span></span><span class="sig-name descname"><span class="pre">test_restart_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deserver_mock_data_block</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_restart_channel.html#test_restart_channel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_restart_channel.test_restart_channel" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
 
 </section>
 <section id="module-decisionengine.framework.tests.test_sample_config">
@@ -844,13 +921,37 @@ The SQLAlchemyDS will create the schema as needed.</p>
 <span id="decisionengine-framework-tests-test-source-proxy-module"></span><h2>decisionengine.framework.tests.test_source_proxy module<a class="headerlink" href="#module-decisionengine.framework.tests.test_source_proxy" title="Permalink to this headline"></a></h2>
 <p>Fixture based tests of the SourceProxy module.</p>
 <dl class="py function">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.test_source_proxy.test_cannot_inherit_from_source_proxy">
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_source_proxy.</span></span><span class="sig-name descname"><span class="pre">test_cannot_inherit_from_source_proxy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_source_proxy.html#test_cannot_inherit_from_source_proxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_source_proxy.test_cannot_inherit_from_source_proxy" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.test_source_proxy.test_combined_channels">
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_source_proxy.</span></span><span class="sig-name descname"><span class="pre">test_combined_channels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deserver_combined</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_source_proxy.html#test_combined_channels"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_source_proxy.test_combined_channels" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.test_source_proxy.test_single_source_proxy">
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_source_proxy.</span></span><span class="sig-name descname"><span class="pre">test_single_source_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deserver</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_source_proxy.html#test_single_source_proxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_source_proxy.test_single_source_proxy" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="decisionengine.framework.tests.test_source_proxy.test_stop_failing_source_proxy">
 <span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_source_proxy.</span></span><span class="sig-name descname"><span class="pre">test_stop_failing_source_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deserver_fail</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_source_proxy.html#test_stop_failing_source_proxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_source_proxy.test_stop_failing_source_proxy" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
+</section>
+<section id="module-decisionengine.framework.tests.test_source_proxy_3G">
+<span id="decisionengine-framework-tests-test-source-proxy-3g-module"></span><h2>decisionengine.framework.tests.test_source_proxy_3G module<a class="headerlink" href="#module-decisionengine.framework.tests.test_source_proxy_3G" title="Permalink to this headline"></a></h2>
+<p>Fixture based tests of the SourceProxy module (tests three generations of source-proxies).</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="decisionengine.framework.tests.test_source_proxy.test_working_source_proxy">
-<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_source_proxy.</span></span><span class="sig-name descname"><span class="pre">test_working_source_proxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deserver</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_source_proxy.html#test_working_source_proxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_source_proxy.test_working_source_proxy" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="decisionengine.framework.tests.test_source_proxy_3G.test_combined_channels_3g">
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_source_proxy_3G.</span></span><span class="sig-name descname"><span class="pre">test_combined_channels_3g</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deserver_combined</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_source_proxy_3G.html#test_combined_channels_3g"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_source_proxy_3G.test_combined_channels_3g" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="decisionengine.framework.tests.test_source_proxy_3G.test_many_source_proxies">
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_source_proxy_3G.</span></span><span class="sig-name descname"><span class="pre">test_many_source_proxies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deserver</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_source_proxy_3G.html#test_many_source_proxies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_source_proxy_3G.test_many_source_proxies" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </section>
@@ -882,20 +983,6 @@ The SQLAlchemyDS will create the schema as needed.</p>
 <span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_start_with_bad_channels.</span></span><span class="sig-name descname"><span class="pre">test_client_can_get_products_no_channels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deserver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caplog</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_start_with_bad_channels.html#test_client_can_get_products_no_channels"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_start_with_bad_channels.test_client_can_get_products_no_channels" title="Permalink to this definition"></a></dt>
 <dd><p>Verify client can get channel products even when none are run</p>
 </dd></dl>
-
-</section>
-<section id="module-decisionengine.framework.tests.test_start_with_no_channels">
-<span id="decisionengine-framework-tests-test-start-with-no-channels-module"></span><h2>decisionengine.framework.tests.test_start_with_no_channels module<a class="headerlink" href="#module-decisionengine.framework.tests.test_start_with_no_channels" title="Permalink to this headline"></a></h2>
-<p>Fixture based DE Server tests of the server without channels, then with them</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="decisionengine.framework.tests.test_start_with_no_channels.deserver_mock_data_block">
-<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_start_with_no_channels.</span></span><span class="sig-name descname"><span class="pre">deserver_mock_data_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mock_data_block</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_start_with_no_channels.html#deserver_mock_data_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_start_with_no_channels.deserver_mock_data_block" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="decisionengine.framework.tests.test_start_with_no_channels.test_start_from_nothing">
-<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.tests.test_start_with_no_channels.</span></span><span class="sig-name descname"><span class="pre">test_start_from_nothing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deserver_mock_data_block</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/tests/test_start_with_no_channels.html#test_start_from_nothing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.tests.test_start_with_no_channels.test_start_from_nothing" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
 
 </section>
 <section id="module-decisionengine.framework.tests">
