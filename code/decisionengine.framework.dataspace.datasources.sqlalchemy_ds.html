@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>decisionengine.framework.dataspace.datasources.sqlalchemy_ds package &mdash; decisionengine 1.2.1.dev473+g6fa0bf4 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>decisionengine.framework.dataspace.datasources.sqlalchemy_ds package &mdash; decisionengine 1.2.1.dev632+g19a163a documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=987acbb0"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -27,11 +30,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> decisionengine
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            decisionengine
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -39,10 +46,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_1.7.html">Latest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_2.0.html">Release 2.0.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_2.0.html#release-2-0-1">Release 2.0.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/release_notes_2.0.html#release-2-0-0">Release 2.0.0</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing and running HEPCloud’s Decision Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing and running HEPCloud’s Decision Engine on EL9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install_el7.html">Installing and running HEPCloud’s Decision Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install_el8.html">Installing and running HEPCloud’s Decision Engine on EL8</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../jenkins.html">Decisionengine CI with Jenkins pipeline</a></li>
@@ -81,13 +92,13 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Welcome to decisionengine’s documentation!</a> &raquo;</li>
-          <li><a href="decisionengine.html">decisionengine package</a> &raquo;</li>
-          <li><a href="decisionengine.framework.html">decisionengine.framework package</a> &raquo;</li>
-          <li><a href="decisionengine.framework.dataspace.html">decisionengine.framework.dataspace package</a> &raquo;</li>
-          <li><a href="decisionengine.framework.dataspace.datasources.html">decisionengine.framework.dataspace.datasources package</a> &raquo;</li>
-      <li>decisionengine.framework.dataspace.datasources.sqlalchemy_ds package</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Welcome to decisionengine’s documentation!</a></li>
+          <li class="breadcrumb-item"><a href="decisionengine.html">decisionengine package</a></li>
+          <li class="breadcrumb-item"><a href="decisionengine.framework.html">decisionengine.framework package</a></li>
+          <li class="breadcrumb-item"><a href="decisionengine.framework.dataspace.html">decisionengine.framework.dataspace package</a></li>
+          <li class="breadcrumb-item"><a href="decisionengine.framework.dataspace.datasources.html">decisionengine.framework.dataspace.datasources package</a></li>
+      <li class="breadcrumb-item active">decisionengine.framework.dataspace.datasources.sqlalchemy_ds package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/code/decisionengine.framework.dataspace.datasources.sqlalchemy_ds.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -98,53 +109,48 @@
            <div itemprop="articleBody">
              
   <section id="decisionengine-framework-dataspace-datasources-sqlalchemy-ds-package">
-<h1>decisionengine.framework.dataspace.datasources.sqlalchemy_ds package<a class="headerlink" href="#decisionengine-framework-dataspace-datasources-sqlalchemy-ds-package" title="Permalink to this headline"></a></h1>
+<h1>decisionengine.framework.dataspace.datasources.sqlalchemy_ds package<a class="headerlink" href="#decisionengine-framework-dataspace-datasources-sqlalchemy-ds-package" title="Link to this heading"></a></h1>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
 <section id="module-decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api">
-<span id="decisionengine-framework-dataspace-datasources-sqlalchemy-ds-datasource-api-module"></span><h2>decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api module<a class="headerlink" href="#module-decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api" title="Permalink to this headline"></a></h2>
+<span id="decisionengine-framework-dataspace-datasources-sqlalchemy-ds-datasource-api-module"></span><h2>decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api module<a class="headerlink" href="#module-decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api" title="Link to this heading"></a></h2>
 <p>The datasource layer for our abstraction</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.</span></span><span class="sig-name descname"><span class="pre">SQLAlchemyDS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.datasource.DataSource" title="decisionengine.framework.dataspace.datasource.DataSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.dataspace.datasource.DataSource</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.</span></span><span class="sig-name descname"><span class="pre">SQLAlchemyDS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.datasource.DataSource" title="decisionengine.framework.dataspace.datasource.DataSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSource</span></code></a></p>
 <p>A DecisionEngine data source via the SQL Alchemy ORM</p>
-<dl>
-<dt>{</dt><dd><dl>
-<dt>“dataspace”: {</dt><dd><dl>
-<dt>“datasource”: {</dt><dd><p>“module”: “decisionengine.framework.dataspace.datasources.sqlalchemy_ds”,
-“name”: “SQLAlchemyDS”,
-“params”: {</p>
-<blockquote>
-<div><p>“pool_size”: 5,
-“max_overflow”: 10,
-“timeout”: 30,</p>
-<p># url is mandatory, but any <cite>engine</cite> keyword is accepted here.
-“url”: “dialect[+driver]://user:password&#64;host/dbname”</p>
-</div></blockquote>
-<p>}</p>
-</dd>
-</dl>
-<p>}</p>
-</dd>
-</dl>
-<p>}</p>
-</dd>
-</dl>
-<p>}</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;dataspace&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;datasource&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;decisionengine.framework.dataspace.datasources.sqlalchemy_ds&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SQLAlchemyDS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pool_size&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="s2">&quot;max_overflow&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+
+                <span class="c1"># url is mandatory, but any `engine` keyword is accepted here.</span>
+                <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;dialect[+driver]://user:password@host/dbname&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>Exceptions should be caught and logged by the caller.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS._abc_impl">
-<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS._abc_impl" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS._abc_impl" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.close">
-<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.close" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.close" title="Link to this definition"></a></dt>
 <dd><p>Close all connections to the database</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
 </dd>
 </dl>
@@ -152,10 +158,10 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.connect" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.connect" title="Link to this definition"></a></dt>
 <dd><p>Create a pool of database connections</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
 </dd>
 </dl>
@@ -163,10 +169,10 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.create_tables">
-<span class="sig-name descname"><span class="pre">create_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.create_tables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.create_tables" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">create_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.create_tables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.create_tables" title="Link to this definition"></a></dt>
 <dd><p>Create database tables</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
 </dd>
 </dl>
@@ -174,13 +180,13 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.delete_data_older_than">
-<span class="sig-name descname"><span class="pre">delete_data_older_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">days</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.delete_data_older_than"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.delete_data_older_than" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">delete_data_older_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">days</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.delete_data_older_than"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.delete_data_older_than" title="Link to this definition"></a></dt>
 <dd><p>Delete data older that interval</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>days</strong> (<em>int</em>) – remove data older than this many days</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
@@ -188,18 +194,18 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.duplicate_datablock">
-<span class="sig-name descname"><span class="pre">duplicate_datablock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_generation_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.duplicate_datablock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.duplicate_datablock" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">duplicate_datablock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_generation_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.duplicate_datablock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.duplicate_datablock" title="Link to this definition"></a></dt>
 <dd><p>For the given taskmanager_id, make a copy of the datablock with given
 generation_id, set the generation_id for the datablock copy</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>generation_id</strong> (<em>int</em>) – generation id to clone</p></li>
 <li><p><strong>new_generation_id</strong> (<em>int</em>) – generation id to create</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
@@ -207,20 +213,20 @@ generation_id, set the generation_id for the datablock copy</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_datablock">
-<span class="sig-name descname"><span class="pre">get_datablock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_datablock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_datablock" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_datablock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_datablock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_datablock" title="Link to this definition"></a></dt>
 <dd><p>Return the entire datablock from the dataproduct table for the given
 taskmanager_id, generation_id</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>generation_id</strong> (<em>int</em>) – generation id to locate</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>with all set keys and their associated values</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -228,21 +234,21 @@ taskmanager_id, generation_id</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_dataproduct">
-<span class="sig-name descname"><span class="pre">get_dataproduct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_dataproduct"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_dataproduct" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_dataproduct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_dataproduct"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_dataproduct" title="Link to this definition"></a></dt>
 <dd><p>Return the data from the dataproduct table for the given
 taskmanager_id, generation_id, key</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>generation_id</strong> (<em>int</em>) – generation id to locate</p></li>
 <li><p><strong>key</strong> (<em>str</em>) – key for the value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The possibly binary value stored earlier</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>obj</p>
 </dd>
 </dl>
@@ -250,20 +256,20 @@ taskmanager_id, generation_id, key</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_dataproducts">
-<span class="sig-name descname"><span class="pre">get_dataproducts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_dataproducts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_dataproducts" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_dataproducts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_dataproducts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_dataproducts" title="Link to this definition"></a></dt>
 <dd><p>Return list of all data products associated with
 with taskmanager_id</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>key</strong> (<em>str</em>) – key for the value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>each element is the matching row as a dict()</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>tuple</p>
 </dd>
 </dl>
@@ -271,18 +277,18 @@ with taskmanager_id</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_header">
-<span class="sig-name descname"><span class="pre">get_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_header" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_header" title="Link to this definition"></a></dt>
 <dd><p>Return the header from the header table for the given
 taskmanager_id, generation_id, key</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>generation_id</strong> (<em>int</em>) – generation id to locate</p></li>
 <li><p><strong>key</strong> (<em>str</em>) – key for the value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>fields in order are:</dt><dd><p>taskmanager.taskmanager_id,
 header.taskmanager_id,
@@ -297,7 +303,7 @@ header.schema_id</p>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>tuple</p>
 </dd>
 </dl>
@@ -305,20 +311,20 @@ header.schema_id</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_last_generation_id">
-<span class="sig-name descname"><span class="pre">get_last_generation_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_last_generation_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_last_generation_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_last_generation_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_last_generation_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_last_generation_id" title="Link to this definition"></a></dt>
 <dd><p>Return last generation id for current task manager
 or taskmanager w/ task_manager_id.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_name</strong> (<em>str</em>) – name of taskmanager to retrieve</p></li>
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>the largest generation stored within the database</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -326,18 +332,18 @@ or taskmanager w/ task_manager_id.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_metadata">
-<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_metadata" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_metadata" title="Link to this definition"></a></dt>
 <dd><p>Return the metadata from the metadata table for the given
 taskmanager_id, generation_id, key</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>generation_id</strong> (<em>int</em>) – generation id to locate</p></li>
 <li><p><strong>key</strong> (<em>str</em>) – key for the value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>fields in order are:</dt><dd><p>taskmanager.taskmanager_id,
 metadata.taskmanager_id,
@@ -350,7 +356,7 @@ metadata.missed_update_count</p>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>tuple</p>
 </dd>
 </dl>
@@ -358,27 +364,27 @@ metadata.missed_update_count</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_schema">
-<span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_schema" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_schema" title="Link to this definition"></a></dt>
 <dd><p>Given the table name return it’s schema</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_taskmanager">
-<span class="sig-name descname"><span class="pre">get_taskmanager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_taskmanager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_taskmanager" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_taskmanager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_taskmanager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_taskmanager" title="Link to this definition"></a></dt>
 <dd><p>Find the task manager by name/uuid in the database
 get back the primary key.</p>
 <p>If multiples match, find highest primary key.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_name</strong> (<em>str</em>) – name of taskmanager to retrieve</p></li>
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>the matching row, column names as keys</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -386,20 +392,20 @@ get back the primary key.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_taskmanagers">
-<span class="sig-name descname"><span class="pre">get_taskmanagers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_taskmanagers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_taskmanagers" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_taskmanagers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_taskmanagers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.get_taskmanagers" title="Link to this definition"></a></dt>
 <dd><p>Find taskmanagers that meet our search</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_name</strong> (<em>str</em>) – name of taskmanager to retrieve</p></li>
 <li><p><strong>start_time</strong> (<em>datetime</em>) – Datetime to confine against</p></li>
 <li><p><strong>end_time</strong> (<em>datetime</em>) – Datetime to confine against</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>each element is a dict() matching row, column names as keys</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
@@ -407,11 +413,11 @@ get back the primary key.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.insert">
-<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.insert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.insert" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.insert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.insert" title="Link to this definition"></a></dt>
 <dd><p>Insert data into respective tables for the given
 taskmanager_id, generation_id, key</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>generation_id</strong> (<em>int</em>) – generation id to create</p></li>
@@ -421,7 +427,7 @@ taskmanager_id, generation_id, key</p>
 <li><p><strong>metadata</strong> (<a class="reference internal" href="decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.datablock.Metadata" title="decisionengine.framework.dataspace.datablock.Metadata"><em>datablock.Metadata</em></a>) – Metadata for the value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
@@ -429,13 +435,13 @@ taskmanager_id, generation_id, key</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.reset_connections">
-<span class="sig-name descname"><span class="pre">reset_connections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.reset_connections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.reset_connections" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">reset_connections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.reset_connections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.reset_connections" title="Link to this definition"></a></dt>
 <dd><p>Reset the connection to the database.
 So long as self.engine isn’t undef, the engine can still
 make new connections if new db actions happen.
 It just wont have any open at this time.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
 </dd>
 </dl>
@@ -443,20 +449,20 @@ It just wont have any open at this time.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.store_taskmanager">
-<span class="sig-name descname"><span class="pre">store_taskmanager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.store_taskmanager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.store_taskmanager" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">store_taskmanager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.store_taskmanager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.store_taskmanager" title="Link to this definition"></a></dt>
 <dd><p>Store TaskManager in database</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – name of taskmanager to retrieve</p></li>
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>datestamp</strong> (<em>datetime</em>) – datetime of created object, defaults to ‘now’</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>the primary key of the row in the database</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -464,11 +470,11 @@ It just wont have any open at this time.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.update" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.datasource_api.SQLAlchemyDS.update" title="Link to this definition"></a></dt>
 <dd><p>Update the data in respective tables for the given
 taskmanager_id, generation_id, key</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>generation_id</strong> (<em>int</em>) – generation id to update</p></li>
@@ -478,7 +484,7 @@ taskmanager_id, generation_id, key</p>
 <li><p><strong>metadata</strong> (<a class="reference internal" href="decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.datablock.Metadata" title="decisionengine.framework.dataspace.datablock.Metadata"><em>datablock.Metadata</em></a>) – Metadata for the value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
@@ -488,79 +494,79 @@ taskmanager_id, generation_id, key</p>
 
 </section>
 <section id="module-decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema">
-<span id="decisionengine-framework-dataspace-datasources-sqlalchemy-ds-db-schema-module"></span><h2>decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema module<a class="headerlink" href="#module-decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema" title="Permalink to this headline"></a></h2>
+<span id="decisionengine-framework-dataspace-datasources-sqlalchemy-ds-db-schema-module"></span><h2>decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema module<a class="headerlink" href="#module-decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema" title="Link to this heading"></a></h2>
 <p>The table layout and utilities for our SQLAlchemy ORM</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.</span></span><span class="sig-name descname"><span class="pre">Base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.</span></span><span class="sig-name descname"><span class="pre">Base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The base class of the class hierarchy.</p>
 <p>When called, it accepts no arguments and returns a new featureless
 instance that has no instance attributes and cannot be given any.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base._sa_registry">
-<span class="sig-name descname"><span class="pre">_sa_registry</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;sqlalchemy.orm.decl_api.registry</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base._sa_registry" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_sa_registry</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;sqlalchemy.orm.decl_api.registry</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base._sa_registry" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base.metadata">
-<span class="sig-name descname"><span class="pre">metadata</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">MetaData()</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base.metadata" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">metadata</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">MetaData()</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base.metadata" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base.registry">
-<span class="sig-name descname"><span class="pre">registry</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;sqlalchemy.orm.decl_api.registry</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base.registry" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">registry</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;sqlalchemy.orm.decl_api.registry</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base.registry" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.</span></span><span class="sig-name descname"><span class="pre">Dataproduct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/db_schema.html#Dataproduct"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base" title="sqlalchemy.orm.decl_api.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.decl_api.Base</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.</span></span><span class="sig-name descname"><span class="pre">Dataproduct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/db_schema.html#Dataproduct"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base" title="sqlalchemy.orm.decl_api.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
 <p>The PRIMARY KEY on this table isn’t used….</p>
 <p>Existing code appears to depend on column order.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct._sa_class_manager">
-<span class="sig-name descname"><span class="pre">_sa_class_manager</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'generation_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'key':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'taskmanager':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'taskmanager_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'value':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct._sa_class_manager" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_sa_class_manager</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'generation_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'key':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'taskmanager':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'taskmanager_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'value':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct._sa_class_manager" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.generation_id">
-<span class="sig-name descname"><span class="pre">generation_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.generation_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">generation_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.generation_id" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.id" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.key">
-<span class="sig-name descname"><span class="pre">key</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.key" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">key</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.key" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.taskmanager">
-<span class="sig-name descname"><span class="pre">taskmanager</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.taskmanager" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">taskmanager</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.taskmanager" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.taskmanager_id">
-<span class="sig-name descname"><span class="pre">taskmanager_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.taskmanager_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">taskmanager_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.taskmanager_id" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.value">
-<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.value" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Dataproduct.value" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.</span></span><span class="sig-name descname"><span class="pre">Header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/db_schema.html#Header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base" title="sqlalchemy.orm.decl_api.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.decl_api.Base</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.</span></span><span class="sig-name descname"><span class="pre">Header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/db_schema.html#Header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base" title="sqlalchemy.orm.decl_api.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
 <p>The PRIMARY KEY on this table isn’t used….</p>
 <p>The existing code has a hard expectation on the time
 columns being BIGINT rather than datetime objects
@@ -572,65 +578,65 @@ burried within the classes.</p>
 <p>Existing code appears to depend on column order.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header._sa_class_manager">
-<span class="sig-name descname"><span class="pre">_sa_class_manager</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'create_time':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'creator':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'expiration_time':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'generation_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'key':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'scheduled_create_time':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'schema_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'taskmanager':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'taskmanager_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header._sa_class_manager" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_sa_class_manager</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'create_time':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'creator':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'expiration_time':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'generation_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'key':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'scheduled_create_time':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'schema_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'taskmanager':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'taskmanager_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header._sa_class_manager" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.create_time">
-<span class="sig-name descname"><span class="pre">create_time</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.create_time" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">create_time</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.create_time" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.creator">
-<span class="sig-name descname"><span class="pre">creator</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.creator" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">creator</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.creator" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.expiration_time">
-<span class="sig-name descname"><span class="pre">expiration_time</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.expiration_time" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">expiration_time</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.expiration_time" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.generation_id">
-<span class="sig-name descname"><span class="pre">generation_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.generation_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">generation_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.generation_id" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.id" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.key">
-<span class="sig-name descname"><span class="pre">key</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.key" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">key</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.key" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.scheduled_create_time">
-<span class="sig-name descname"><span class="pre">scheduled_create_time</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.scheduled_create_time" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">scheduled_create_time</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.scheduled_create_time" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.schema_id">
-<span class="sig-name descname"><span class="pre">schema_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.schema_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">schema_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.schema_id" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.taskmanager">
-<span class="sig-name descname"><span class="pre">taskmanager</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.taskmanager" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">taskmanager</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.taskmanager" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.taskmanager_id">
-<span class="sig-name descname"><span class="pre">taskmanager_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.taskmanager_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">taskmanager_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Header.taskmanager_id" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.</span></span><span class="sig-name descname"><span class="pre">Metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/db_schema.html#Metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base" title="sqlalchemy.orm.decl_api.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.decl_api.Base</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.</span></span><span class="sig-name descname"><span class="pre">Metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/db_schema.html#Metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base" title="sqlalchemy.orm.decl_api.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
 <p>The PRIMARY KEY on this table isn’t used….</p>
 <p>The existing code has a hard expectation on the state
 field as a ‘text’ element.</p>
@@ -640,55 +646,55 @@ burried within the classes.</p>
 <p>Existing code appears to depend on column order.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata._sa_class_manager">
-<span class="sig-name descname"><span class="pre">_sa_class_manager</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'generation_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'generation_time':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'key':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'missed_update_count':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'state':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'taskmanager':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'taskmanager_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata._sa_class_manager" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_sa_class_manager</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'generation_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'generation_time':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'key':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'missed_update_count':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'state':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'taskmanager':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'taskmanager_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata._sa_class_manager" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.generation_id">
-<span class="sig-name descname"><span class="pre">generation_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.generation_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">generation_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.generation_id" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.generation_time">
-<span class="sig-name descname"><span class="pre">generation_time</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.generation_time" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">generation_time</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.generation_time" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.id" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.key">
-<span class="sig-name descname"><span class="pre">key</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.key" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">key</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.key" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.missed_update_count">
-<span class="sig-name descname"><span class="pre">missed_update_count</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.missed_update_count" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">missed_update_count</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.missed_update_count" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.state">
-<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.state" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.state" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.taskmanager">
-<span class="sig-name descname"><span class="pre">taskmanager</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.taskmanager" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">taskmanager</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.taskmanager" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.taskmanager_id">
-<span class="sig-name descname"><span class="pre">taskmanager_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.taskmanager_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">taskmanager_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Metadata.taskmanager_id" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Schema">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.</span></span><span class="sig-name descname"><span class="pre">Schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/db_schema.html#Schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Schema" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base" title="sqlalchemy.orm.decl_api.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.decl_api.Base</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.</span></span><span class="sig-name descname"><span class="pre">Schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/db_schema.html#Schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Schema" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base" title="sqlalchemy.orm.decl_api.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
 <p>This table may not be in use</p>
 <dl class="simple">
 <dt>Has a one-to-many relationship with:</dt><dd><p>Header - may not be in use</p>
@@ -696,25 +702,25 @@ burried within the classes.</p>
 </dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Schema._sa_class_manager">
-<span class="sig-name descname"><span class="pre">_sa_class_manager</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'schema':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'schema_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Schema._sa_class_manager" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_sa_class_manager</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'schema':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'schema_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Schema._sa_class_manager" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Schema.schema">
-<span class="sig-name descname"><span class="pre">schema</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Schema.schema" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">schema</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Schema.schema" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Schema.schema_id">
-<span class="sig-name descname"><span class="pre">schema_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Schema.schema_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">schema_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Schema.schema_id" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.</span></span><span class="sig-name descname"><span class="pre">Taskmanager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/db_schema.html#Taskmanager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base" title="sqlalchemy.orm.decl_api.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.orm.decl_api.Base</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.</span></span><span class="sig-name descname"><span class="pre">Taskmanager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/db_schema.html#Taskmanager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Base" title="sqlalchemy.orm.decl_api.Base"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></a></p>
 <dl class="simple">
 <dt>Has a one-to-many relationship with:</dt><dd><p>Header
 Metadata
@@ -728,113 +734,108 @@ Dataproduct</p>
 <p>Existing code appears to depend on column order.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager._sa_class_manager">
-<span class="sig-name descname"><span class="pre">_sa_class_manager</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'datestamp':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'name':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'sequence_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'task_dataproduct':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'task_header':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'task_metadata':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'taskmanager_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager._sa_class_manager" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_sa_class_manager</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'datestamp':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'name':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'sequence_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'task_dataproduct':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'task_header':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'task_metadata':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'taskmanager_id':</span> <span class="pre">&lt;sqlalchemy.orm.attributes.InstrumentedAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager._sa_class_manager" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.datestamp">
-<span class="sig-name descname"><span class="pre">datestamp</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.datestamp" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">datestamp</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.datestamp" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.name">
-<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.name" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.name" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.sequence_id">
-<span class="sig-name descname"><span class="pre">sequence_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.sequence_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">sequence_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.sequence_id" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.task_dataproduct">
-<span class="sig-name descname"><span class="pre">task_dataproduct</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.task_dataproduct" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">task_dataproduct</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.task_dataproduct" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.task_header">
-<span class="sig-name descname"><span class="pre">task_header</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.task_header" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">task_header</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.task_header" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.task_metadata">
-<span class="sig-name descname"><span class="pre">task_metadata</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.task_metadata" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">task_metadata</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.task_metadata" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.taskmanager_id">
-<span class="sig-name descname"><span class="pre">taskmanager_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.taskmanager_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">taskmanager_id</span></span><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.db_schema.Taskmanager.taskmanager_id" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 </section>
 <section id="module-decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils">
-<span id="decisionengine-framework-dataspace-datasources-sqlalchemy-ds-utils-module"></span><h2>decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils module<a class="headerlink" href="#module-decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils" title="Permalink to this headline"></a></h2>
+<span id="decisionengine-framework-dataspace-datasources-sqlalchemy-ds-utils-module"></span><h2>decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils module<a class="headerlink" href="#module-decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils" title="Link to this heading"></a></h2>
 <p>Code not written by us</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.add_engine_pidguard">
-<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.</span></span><span class="sig-name descname"><span class="pre">add_engine_pidguard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/utils.html#add_engine_pidguard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.add_engine_pidguard" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.</span></span><span class="sig-name descname"><span class="pre">add_engine_pidguard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/utils.html#add_engine_pidguard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.add_engine_pidguard" title="Link to this definition"></a></dt>
 <dd><p>Based on
 <a class="reference external" href="https://stackoverflow.com/questions/62920507/using-sqlalchemy-connection-pooling-queues-with-python-multiprocessing">https://stackoverflow.com/questions/62920507/using-sqlalchemy-connection-pooling-queues-with-python-multiprocessing</a></p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.clone_model">
-<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.</span></span><span class="sig-name descname"><span class="pre">clone_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/utils.html#clone_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.clone_model" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.</span></span><span class="sig-name descname"><span class="pre">clone_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/utils.html#clone_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.clone_model" title="Link to this definition"></a></dt>
 <dd><p>Based on <a class="reference external" href="https://stackoverflow.com/a/55991358">https://stackoverflow.com/a/55991358</a></p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.orm_as_dict">
-<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.</span></span><span class="sig-name descname"><span class="pre">orm_as_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/utils.html#orm_as_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.orm_as_dict" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.</span></span><span class="sig-name descname"><span class="pre">orm_as_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/utils.html#orm_as_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.utils.orm_as_dict" title="Link to this definition"></a></dt>
 <dd><p>Based on : <a class="reference external" href="https://stackoverflow.com/a/37350445">https://stackoverflow.com/a/37350445</a></p>
 </dd></dl>
 
 </section>
 <section id="module-decisionengine.framework.dataspace.datasources.sqlalchemy_ds">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-decisionengine.framework.dataspace.datasources.sqlalchemy_ds" title="Permalink to this headline"></a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-decisionengine.framework.dataspace.datasources.sqlalchemy_ds" title="Link to this heading"></a></h2>
 <p>Top level import so we can rationally segment items of the ORM</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.</span></span><span class="sig-name descname"><span class="pre">SQLAlchemyDS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.datasource.DataSource" title="decisionengine.framework.dataspace.datasource.DataSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">decisionengine.framework.dataspace.datasource.DataSource</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">decisionengine.framework.dataspace.datasources.sqlalchemy_ds.</span></span><span class="sig-name descname"><span class="pre">SQLAlchemyDS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.datasource.DataSource" title="decisionengine.framework.dataspace.datasource.DataSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSource</span></code></a></p>
 <p>A DecisionEngine data source via the SQL Alchemy ORM</p>
-<dl>
-<dt>{</dt><dd><dl>
-<dt>“dataspace”: {</dt><dd><dl>
-<dt>“datasource”: {</dt><dd><p>“module”: “decisionengine.framework.dataspace.datasources.sqlalchemy_ds”,
-“name”: “SQLAlchemyDS”,
-“params”: {</p>
-<blockquote>
-<div><p>“pool_size”: 5,
-“max_overflow”: 10,
-“timeout”: 30,</p>
-<p># url is mandatory, but any <cite>engine</cite> keyword is accepted here.
-“url”: “dialect[+driver]://user:password&#64;host/dbname”</p>
-</div></blockquote>
-<p>}</p>
-</dd>
-</dl>
-<p>}</p>
-</dd>
-</dl>
-<p>}</p>
-</dd>
-</dl>
-<p>}</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;dataspace&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;datasource&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;decisionengine.framework.dataspace.datasources.sqlalchemy_ds&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SQLAlchemyDS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;pool_size&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="s2">&quot;max_overflow&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+
+                <span class="c1"># url is mandatory, but any `engine` keyword is accepted here.</span>
+                <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;dialect[+driver]://user:password@host/dbname&quot;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>Exceptions should be caught and logged by the caller.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS._abc_impl">
-<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS._abc_impl" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS._abc_impl" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.close">
-<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.close" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.close" title="Link to this definition"></a></dt>
 <dd><p>Close all connections to the database</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
 </dd>
 </dl>
@@ -842,10 +843,10 @@ Dataproduct</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.connect">
-<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.connect" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.connect" title="Link to this definition"></a></dt>
 <dd><p>Create a pool of database connections</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
 </dd>
 </dl>
@@ -853,10 +854,10 @@ Dataproduct</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.create_tables">
-<span class="sig-name descname"><span class="pre">create_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.create_tables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.create_tables" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">create_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.create_tables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.create_tables" title="Link to this definition"></a></dt>
 <dd><p>Create database tables</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
 </dd>
 </dl>
@@ -864,13 +865,13 @@ Dataproduct</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.delete_data_older_than">
-<span class="sig-name descname"><span class="pre">delete_data_older_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">days</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.delete_data_older_than"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.delete_data_older_than" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">delete_data_older_than</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">days</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.delete_data_older_than"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.delete_data_older_than" title="Link to this definition"></a></dt>
 <dd><p>Delete data older that interval</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>days</strong> (<em>int</em>) – remove data older than this many days</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
@@ -878,18 +879,18 @@ Dataproduct</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.duplicate_datablock">
-<span class="sig-name descname"><span class="pre">duplicate_datablock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_generation_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.duplicate_datablock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.duplicate_datablock" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">duplicate_datablock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_generation_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.duplicate_datablock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.duplicate_datablock" title="Link to this definition"></a></dt>
 <dd><p>For the given taskmanager_id, make a copy of the datablock with given
 generation_id, set the generation_id for the datablock copy</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>generation_id</strong> (<em>int</em>) – generation id to clone</p></li>
 <li><p><strong>new_generation_id</strong> (<em>int</em>) – generation id to create</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
@@ -897,20 +898,20 @@ generation_id, set the generation_id for the datablock copy</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_datablock">
-<span class="sig-name descname"><span class="pre">get_datablock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_datablock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_datablock" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_datablock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_datablock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_datablock" title="Link to this definition"></a></dt>
 <dd><p>Return the entire datablock from the dataproduct table for the given
 taskmanager_id, generation_id</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>generation_id</strong> (<em>int</em>) – generation id to locate</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>with all set keys and their associated values</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -918,21 +919,21 @@ taskmanager_id, generation_id</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_dataproduct">
-<span class="sig-name descname"><span class="pre">get_dataproduct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_dataproduct"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_dataproduct" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_dataproduct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_dataproduct"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_dataproduct" title="Link to this definition"></a></dt>
 <dd><p>Return the data from the dataproduct table for the given
 taskmanager_id, generation_id, key</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>generation_id</strong> (<em>int</em>) – generation id to locate</p></li>
 <li><p><strong>key</strong> (<em>str</em>) – key for the value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The possibly binary value stored earlier</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>obj</p>
 </dd>
 </dl>
@@ -940,20 +941,20 @@ taskmanager_id, generation_id, key</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_dataproducts">
-<span class="sig-name descname"><span class="pre">get_dataproducts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_dataproducts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_dataproducts" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_dataproducts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_dataproducts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_dataproducts" title="Link to this definition"></a></dt>
 <dd><p>Return list of all data products associated with
 with taskmanager_id</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>key</strong> (<em>str</em>) – key for the value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>each element is the matching row as a dict()</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>tuple</p>
 </dd>
 </dl>
@@ -961,18 +962,18 @@ with taskmanager_id</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_header">
-<span class="sig-name descname"><span class="pre">get_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_header" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_header" title="Link to this definition"></a></dt>
 <dd><p>Return the header from the header table for the given
 taskmanager_id, generation_id, key</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>generation_id</strong> (<em>int</em>) – generation id to locate</p></li>
 <li><p><strong>key</strong> (<em>str</em>) – key for the value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>fields in order are:</dt><dd><p>taskmanager.taskmanager_id,
 header.taskmanager_id,
@@ -987,7 +988,7 @@ header.schema_id</p>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>tuple</p>
 </dd>
 </dl>
@@ -995,20 +996,20 @@ header.schema_id</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_last_generation_id">
-<span class="sig-name descname"><span class="pre">get_last_generation_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_last_generation_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_last_generation_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_last_generation_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_last_generation_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_last_generation_id" title="Link to this definition"></a></dt>
 <dd><p>Return last generation id for current task manager
 or taskmanager w/ task_manager_id.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_name</strong> (<em>str</em>) – name of taskmanager to retrieve</p></li>
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>the largest generation stored within the database</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -1016,18 +1017,18 @@ or taskmanager w/ task_manager_id.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_metadata">
-<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_metadata" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_metadata" title="Link to this definition"></a></dt>
 <dd><p>Return the metadata from the metadata table for the given
 taskmanager_id, generation_id, key</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>generation_id</strong> (<em>int</em>) – generation id to locate</p></li>
 <li><p><strong>key</strong> (<em>str</em>) – key for the value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><dl class="simple">
 <dt>fields in order are:</dt><dd><p>taskmanager.taskmanager_id,
 metadata.taskmanager_id,
@@ -1040,7 +1041,7 @@ metadata.missed_update_count</p>
 </dl>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>tuple</p>
 </dd>
 </dl>
@@ -1048,27 +1049,27 @@ metadata.missed_update_count</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_schema">
-<span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_schema" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_schema" title="Link to this definition"></a></dt>
 <dd><p>Given the table name return it’s schema</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_taskmanager">
-<span class="sig-name descname"><span class="pre">get_taskmanager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_taskmanager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_taskmanager" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_taskmanager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_taskmanager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_taskmanager" title="Link to this definition"></a></dt>
 <dd><p>Find the task manager by name/uuid in the database
 get back the primary key.</p>
 <p>If multiples match, find highest primary key.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_name</strong> (<em>str</em>) – name of taskmanager to retrieve</p></li>
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>the matching row, column names as keys</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -1076,20 +1077,20 @@ get back the primary key.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_taskmanagers">
-<span class="sig-name descname"><span class="pre">get_taskmanagers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_taskmanagers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_taskmanagers" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_taskmanagers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.get_taskmanagers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.get_taskmanagers" title="Link to this definition"></a></dt>
 <dd><p>Find taskmanagers that meet our search</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_name</strong> (<em>str</em>) – name of taskmanager to retrieve</p></li>
 <li><p><strong>start_time</strong> (<em>datetime</em>) – Datetime to confine against</p></li>
 <li><p><strong>end_time</strong> (<em>datetime</em>) – Datetime to confine against</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>each element is a dict() matching row, column names as keys</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
@@ -1097,11 +1098,11 @@ get back the primary key.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.insert">
-<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.insert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.insert" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.insert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.insert" title="Link to this definition"></a></dt>
 <dd><p>Insert data into respective tables for the given
 taskmanager_id, generation_id, key</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>generation_id</strong> (<em>int</em>) – generation id to create</p></li>
@@ -1111,7 +1112,7 @@ taskmanager_id, generation_id, key</p>
 <li><p><strong>metadata</strong> (<a class="reference internal" href="decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.datablock.Metadata" title="decisionengine.framework.dataspace.datablock.Metadata"><em>datablock.Metadata</em></a>) – Metadata for the value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
@@ -1119,13 +1120,13 @@ taskmanager_id, generation_id, key</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.reset_connections">
-<span class="sig-name descname"><span class="pre">reset_connections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.reset_connections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.reset_connections" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">reset_connections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.reset_connections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.reset_connections" title="Link to this definition"></a></dt>
 <dd><p>Reset the connection to the database.
 So long as self.engine isn’t undef, the engine can still
 make new connections if new db actions happen.
 It just wont have any open at this time.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
 </dd>
 </dl>
@@ -1133,20 +1134,20 @@ It just wont have any open at this time.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.store_taskmanager">
-<span class="sig-name descname"><span class="pre">store_taskmanager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.store_taskmanager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.store_taskmanager" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">store_taskmanager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.store_taskmanager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.store_taskmanager" title="Link to this definition"></a></dt>
 <dd><p>Store TaskManager in database</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – name of taskmanager to retrieve</p></li>
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>datestamp</strong> (<em>datetime</em>) – datetime of created object, defaults to ‘now’</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>the primary key of the row in the database</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -1154,11 +1155,11 @@ It just wont have any open at this time.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.update" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">taskmanager_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/decisionengine/framework/dataspace/datasources/sqlalchemy_ds/datasource_api.html#SQLAlchemyDS.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#decisionengine.framework.dataspace.datasources.sqlalchemy_ds.SQLAlchemyDS.update" title="Link to this definition"></a></dt>
 <dd><p>Update the data in respective tables for the given
 taskmanager_id, generation_id, key</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>taskmanager_id</strong> (<em>str/uuid</em>) – id of taskmanager to retrieve</p></li>
 <li><p><strong>generation_id</strong> (<em>int</em>) – generation id to update</p></li>
@@ -1168,7 +1169,7 @@ taskmanager_id, generation_id, key</p>
 <li><p><strong>metadata</strong> (<a class="reference internal" href="decisionengine.framework.dataspace.html#decisionengine.framework.dataspace.datablock.Metadata" title="decisionengine.framework.dataspace.datablock.Metadata"><em>datablock.Metadata</em></a>) – Metadata for the value</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
@@ -1190,7 +1191,7 @@ taskmanager_id, generation_id, key</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Fermilab.</p>
+    <p>&#169; Copyright 2024, Fermilab.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -13,6 +13,24 @@ decisionengine.framework.engine.tests.fixtures module
    :show-inheritance:
    :private-members:
 
+decisionengine.framework.engine.tests.test\_ChannelWorkers module
+-----------------------------------------------------------------
+
+.. automodule:: decisionengine.framework.engine.tests.test_ChannelWorkers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+decisionengine.framework.engine.tests.test\_SourceWorkers module
+----------------------------------------------------------------
+
+.. automodule:: decisionengine.framework.engine.tests.test_SourceWorkers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
 decisionengine.framework.engine.tests.test\_client\_only module
 ---------------------------------------------------------------
 
@@ -35,6 +53,15 @@ decisionengine.framework.engine.tests.test\_startup module
 ----------------------------------------------------------
 
 .. automodule:: decisionengine.framework.engine.tests.test_startup
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+decisionengine.framework.engine.tests.test\_verify\_redis\_server module
+------------------------------------------------------------------------
+
+.. automodule:: decisionengine.framework.engine.tests.test_verify_redis_server
    :members:
    :undoc-members:
    :show-inheritance:

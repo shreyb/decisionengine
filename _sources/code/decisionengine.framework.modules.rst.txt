@@ -39,19 +39,19 @@ decisionengine.framework.modules.Publisher module
    :show-inheritance:
    :private-members:
 
-decisionengine.framework.modules.Source module
-----------------------------------------------
+decisionengine.framework.modules.QueueLogger module
+---------------------------------------------------
 
-.. automodule:: decisionengine.framework.modules.Source
+.. automodule:: decisionengine.framework.modules.QueueLogger
    :members:
    :undoc-members:
    :show-inheritance:
    :private-members:
 
-decisionengine.framework.modules.SourceProxy module
----------------------------------------------------
+decisionengine.framework.modules.Source module
+----------------------------------------------
 
-.. automodule:: decisionengine.framework.modules.SourceProxy
+.. automodule:: decisionengine.framework.modules.Source
    :members:
    :undoc-members:
    :show-inheritance:

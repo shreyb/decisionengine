@@ -1,9 +1,15 @@
+.. SPDX-FileCopyrightText: 2017 Fermi Research Alliance, LLC
+.. SPDX-License-Identifier: Apache-2.0
+
 Welcome to decisionengine's documentation!
 ==========================================
 
 The Decision Engine is a critical component of the HEP Cloud Facility. It provides the
 functionality of resource scheduling for disparate resource providers, including those
-which may have a cost or a restricted allocation of cycles
+which may have a cost or restricted allocation of cycles.
+This package, decisionengine, provides the framework and base classes, the
+`decisionengine_modules </decisionengine_modules/>`_ package contains provider
+specific implementations of the base classes.
 
 Release Notes
 =============
@@ -12,7 +18,7 @@ Release Notes
    :maxdepth: 1
 
    release_notes
-   Latest<release_notes/release_notes_1.7>
+   Latest<release_notes/release_notes_2.0>
 
 
 Install Decision Engine
@@ -25,6 +31,8 @@ Decision Engine using the distributed RPM packages.
    :maxdepth: 1
 
    install
+   install_el7
+   install_el8
 
 
 Developer Documentation
